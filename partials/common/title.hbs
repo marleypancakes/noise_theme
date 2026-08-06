@@ -1,0 +1,19 @@
+<div class="relative">
+    <div class="py-[1.5rem] lg:py-[2.5em] px-4 flex items-center justify-center">
+        <div class="overflow-hidden slide-container">
+            <div class="relative mt-1.5 mx-4 translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                {{#if h1}}
+                    <h1 class="section-title">{{title}}</h1>    
+                {{else}}
+                    <h2 class="section-title">{{title}}</h2>    
+                {{/if}}
+                
+                <div class="section-title-blur">{{title}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="luminous-borders-container">
+        <div class="luminous-borders-blur border-b-2"></div>
+        <div class="luminous-borders-solid border-b-2"></div>
+    </div>
+</div>

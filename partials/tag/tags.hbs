@@ -1,0 +1,12 @@
+{{#get "tags" limit="4" include="count.posts" order="count.posts desc"}}
+    {{#if tags}}
+        {{> common/title title=(t "Top Tags")}}
+        <section class="section-tags relative">
+            <div class="grid grid-cols-1 lg:grid-cols-4">
+                {{#foreach tags}}
+                    {{> tag/tag-card}}
+                {{/foreach}}
+            </div>
+        </section>
+    {{/if}}
+{{/get}}

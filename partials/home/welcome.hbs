@@ -1,0 +1,22 @@
+{{#if @custom.welcome_title}}
+    <section class="section-welcome relative px-4 sm:px-8 lg:px-[4em] py-20 lg:py-[5em] gap-y-12 grid grid-cols-1 md:grid-cols-2">
+        <div class="section-welcome-title">
+            <div class="overflow-hidden slide-container">
+                <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                    <div class="text-[--heading-color] font-primary text-[2rem] leading-loose"> {{@custom.welcome_title}} </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-welcome-sub-title mb-2.5 lg:mb-[1em] transition-all duration-1000 delay-100 fade-in">
+            <div class="text-transparent bg-clip-text font-medium text-[1.4rem] lg:text-[1.4em] leading-8 lg:leading-loose text-gradient transition-all duration-100">
+                {{@custom.welcome_sub_title}}
+            </div>
+        </div>
+        <div class="noise-bg"></div>
+        <div class="white-bg"></div>
+        <div class="luminous-borders-container">
+            <div class="luminous-borders-blur border-b-2"></div>
+            <div class="luminous-borders-solid border-b-2"></div>
+        </div>
+    </section>
+{{/if}}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    {{!-- Use fonts based on Ghost admin settings --}}
+    {{> common/fonts}}
+    <style>
+        body {
+              --blur: 1px;
+              --blur-sm: 1px;
+              --blur-lg: 1px;
+        }
+    </style>
+    {{!-- Compiled CSS --}}
+    <link rel="stylesheet" href="{{asset "built/index.css"}}">
+    {{{block "styles"}}}
+    {{> handle-theme}}
+    <title>{{meta_title}}</title>
+    {{!-- Outputs important meta data and settings, should always be in <head> --}}
+    {{ghost_head}}
+  </head>
+
+  <body class="bg-[--body-bg] relative {{body_class}}" data-theme="light">
+    {{> common/header}}
+    {{> common/mobile-menu}}
+    <div class="fixed w-screen h-full top-0 left-0 z-[100] bg-[rgba(255,255,255,0.03)] backdrop-blur transition-all duration-500 mobile-nav-underlay">
+      <div class="noise-bg"></div>
+    </div>
+    {{{body}}} 
+    {{> common/footer}}
+    {{!-- Global variables for pagination and custom settings --}}
+    <script>
+      const GLOBAL = {
+        CURRENT_PAGE: parseInt('{{pagination.page}}'),
+        NEXT_PAGE: parseInt('{{pagination.next}}'),
+        NEXT_PAGE_LINK: '',
+        MAX_PAGES: parseInt('{{pagination.pages}}'),
+        LAST_PAGE: `{{pagination.page}}` === `{{pagination.pages}}` ? true : false,
+        POSTS_PER_PAGE: parseInt('{{@config.posts_per_page}}'),
+        OPEN_LINKS_IN_NEW_TAB: true,
+        ENABLE_IMAGE_LIGHTBOX: true,
+        TOTAL_POSTS: parseInt('{{pagination.total}}'),
+        DEFAULT_COLOR_SCHEME: '{{#if @custom.default_color_scheme}}{{@custom.default_color_scheme}}{{else}}system{{/if}}'
+      }
+    </script>
+    {{!-- Compiled JS --}}
+    <script src="{{asset "built/index.js"}}" defer></script>
+    {{{block "scripts"}}}
+    {{!-- Outputs important scripts - should always be included before closing body tag --}}
+    {{ghost_foot}}
+  </body>
+</html>

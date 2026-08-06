@@ -1,0 +1,53 @@
+{{#if @site.logo}}
+<a href="{{@site.url}}" title="{{@site.title}}" class="site-logo theme-light-logo">
+    <picture>
+            {{!-- avif will not work with animations. If you plan to use animated logo, then remove the avif image source. --}}
+            <source srcset="{{img_url @site.logo size="xxs" format="avif"}} 50w,
+                        {{img_url @site.logo size="xs" format="avif"}} 100w,
+                        {{img_url @site.logo size="s" format="avif"}} 300w,
+                        {{img_url @site.logo size="m" format="avif"}} 500w,
+                        {{img_url @site.logo size="l" format="avif"}} 700w,
+                        {{img_url @site.logo size="xl" format="avif"}} 1000w,
+                        {{img_url @site.logo size="xxl" format="avif"}} 2000w"
+                        sizes="((max-width: 100px)) 50px,
+                        ((min-width: 100px) and (max-width: 500px)) 100px,
+                        ((min-width: 500px) and (max-width: 1000px)) 300px,
+                        (min-width: 1000px) 500px" type="image/avif">
+            <source srcset="{{img_url @site.logo size="xxs" format="webp"}} 50w,
+                        {{img_url @site.logo size="xs" format="webp"}} 100w,
+                        {{img_url @site.logo size="s" format="webp"}} 300w,
+                        {{img_url @site.logo size="m" format="webp"}} 500w,
+                        {{img_url @site.logo size="l" format="webp"}} 700w,
+                        {{img_url @site.logo size="xl" format="webp"}} 1000w,
+                        {{img_url @site.logo size="xxl" format="webp"}} 2000w"
+                        sizes="((max-width: 100px)) 50px,
+                        ((min-width: 100px) and (max-width: 500px)) 100px,
+                        ((min-width: 500px) and (max-width: 1000px)) 300px,
+                        (min-width: 1000px) 500px" type="image/webp">
+            <img srcset="{{img_url @site.logo size="xxs"}} 50w,
+                        {{img_url @site.logo size="xs"}} 100w,
+                        {{img_url @site.logo size="s"}} 300w,
+                        {{img_url @site.logo size="m"}} 500w,
+                        {{img_url @site.logo size="l"}} 700w,
+                        {{img_url @site.logo size="xl"}} 1000w,
+                        {{img_url @site.logo size="xxl"}} 2000w"
+                        src="{{img_url @site.logo size="m"}}"
+                        sizes="((max-width: 100px)) 50px,
+                        ((min-width: 100px) and (max-width: 500px)) 100px,
+                        ((min-width: 500px) and (max-width: 1000px)) 300px,
+                        (min-width: 1000px) 500px"
+                        loading="lazy"
+                        width="200" height="50"
+                        alt="{{@site.title}}" class="w-24 lg:w-36">
+        </picture>
+</a>
+<a href="{{@site.url}}" title="{{@site.title}}" class="site-logo theme-dark-logo">
+    <img {{#if @custom.logo_for_dark_mode}}src="{{@custom.logo_for_dark_mode}}"{{else}}src="{{@site.logo}}"{{/if}}
+                        alt="{{@site.title}}"
+                        class="w-24 lg:w-36"
+                        loading="lazy"
+                        width="200" height="50">
+</a>
+{{else}}
+<a class="site-title relative font-bold font-secondary text-[--heading-color] text-[7.2vw] md:text-[7.7vw] lg:text-[4em] leading-none lg:leading-[1.25em]" href="{{@site.url}}" title="{{@site.title}}"> {{@site.title}} </a>
+{{/if}}

@@ -1,0 +1,112 @@
+{{!< default}}
+<section class="section-authors-page relative">
+    {{#author}}
+        <div class="relative">
+            <div class="py-[1.5rem] lg:py-[2.5em] px-4 flex items-center justify-center">
+                <div class="overflow-hidden slide-container">
+                    <div class="relative mt-1.5 mx-4 translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                        <h1 class="section-title">{{name}}</h1>
+                        <div class="section-title-blur">{{name}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="noise-bg"></div>
+            <div class="white-bg"></div>
+            <div class="luminous-borders-container">
+                <div class="luminous-borders-blur border-b-2"></div>
+                <div class="luminous-borders-solid border-b-2"></div>
+            </div>
+        </div>
+        {{#if profile_image}}
+            <div class="relative grid grid-cols-1 lg:grid-cols-1-2">
+                <div class="relative w-full">
+                    <figure>
+                        <picture>
+                            {{!-- avif will not work with animations. If you plan to use animated images, then remove the avif image source. --}}
+                            <source srcset="{{img_url profile_image size="xxs" format="avif"}} 50w,
+                            {{img_url profile_image size="xs" format="avif"}} 100w,
+                            {{img_url profile_image size="s" format="avif"}} 300w,
+                            {{img_url profile_image size="m" format="avif"}} 500w,
+                            {{img_url profile_image size="l" format="avif"}} 700w,
+                            {{img_url profile_image size="xl" format="avif"}} 1000w,
+                            {{img_url profile_image size="xxl" format="avif"}} 2000w" sizes="((max-width: 100px)) 100px,
+                            ((min-width: 100px) and (max-width: 500px)) 500px,
+                            ((min-width: 500px) and (max-width: 1000px)) 1000px,
+                            (min-width: 1000px) 2000px" type="image/avif">
+                            <source srcset="{{img_url profile_image size="xxs" format="webp"}} 50w,
+                            {{img_url profile_image size="xs" format="webp"}} 100w,
+                            {{img_url profile_image size="s" format="webp"}} 300w,
+                            {{img_url profile_image size="m" format="webp"}} 500w,
+                            {{img_url profile_image size="l" format="webp"}} 700w,
+                            {{img_url profile_image size="xl" format="webp"}} 1000w,
+                            {{img_url profile_image size="xxl" format="webp"}} 2000w" sizes="((max-width: 100px)) 100px,
+                            ((min-width: 100px) and (max-width: 500px)) 500px,
+                            ((min-width: 500px) and (max-width: 1000px)) 1000px,
+                            (min-width: 1000px) 2000px" type="image/webp">
+                            <img srcset="{{img_url profile_image size="xxs"}} 50w,
+                            {{img_url profile_image size="xs"}} 100w,
+                            {{img_url profile_image size="s"}} 300w,
+                            {{img_url profile_image size="m"}} 500w,
+                            {{img_url profile_image size="l"}} 700w,
+                            {{img_url profile_image size="xl"}} 1000w,
+                            {{img_url profile_image size="xxl"}} 2000w" src="{{img_url profile_image size="xl"}}" sizes="((max-width: 100px)) 100px,
+                            ((min-width: 100px) and (max-width: 500px)) 500px,
+                            ((min-width: 500px) and (max-width: 1000px)) 1000px,
+                            (min-width: 1000px) 2000px" class="w-full h-full border-2 border-t-0 border-[--border-color] object-cover object-center sm:grayscale hover:grayscale-0 transition-all duration-200" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
+                        </picture>
+                    </figure>
+                    <div class="luminous-borders-container">
+                        <div class="luminous-borders-blur border-2 border-t-0"></div>
+                        <div class="luminous-borders-solid border-2 border-t-0"></div>
+                    </div>
+                </div>
+        {{else}}
+            <div class="relative grid grid-cols-1">
+        {{/if}}
+    {{/author}}
+    <div class="px-4 sm:px-8 lg:px-[4em] py-8 lg:py-[4em] flex flex-col items-center justify-center lg:justify-between gap-12 lg:gap-[4em]">
+        <div class="flex flex-col {{#author}}{{^if profile_image}} text-center items-center flex justify-center {{/if}}{{/author}}">
+            <div class="overflow-hidden slide-container mt-1 lg:mt-[0.7em]">
+                <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                    <h2 class="font-bold capitalize text-[--heading-color] text-[28px] md:text-[30px] lg:text-[2.5em] leading-9 md:leading-[38px] lg:leading-[1.25em]"> {{#plural pagination.total empty=(t 'No Articles') singular=(t '1 Article') plural=(t '% Articles')}}{{/plural}} </h2>
+                </div>
+            </div>
+            {{#author}}
+                <p class="mt-4 mb-2.5 lg:mb-[1em] transition-all duration-1000 delay-100 fade-in"> {{bio}} </p>
+                {{#if location}}
+                    <div class="overflow-hidden slide-container mt-1 lg:mt-[0.7em]">
+                        <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                            <div class="uppercase text-[--heading-color] text-base lg:text-[1vw] leading-loose"> {{location}} </div>
+                        </div>
+                    </div>
+                {{/if}}
+                <div class="w-full sm:w-auto mt-8 grid sm:flex sm:justify-start-start grid-cols-2 grid-rows-2 sm:grid-cols-4 sm:grid-rows-1 gap-y-4 gap-x-[2em] sm:gap-[2em]">
+                    {{> author/author-socials}}
+                </div>
+            {{/author}}
+        </div>
+    </div>
+    </div>
+    <div class="luminous-borders-container">
+        <div class="luminous-borders-blur border-b-2"></div>
+        <div class="luminous-borders-solid border-b-2"></div>
+    </div>
+</section>
+<section class="relative">
+    <div class="relative">
+        <div class="py-[1.5rem] lg:py-[2.5em] px-4 flex items-center justify-center">
+            <div class="overflow-hidden slide-container">
+                <div class="relative mt-1.5 mx-4 translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                    <h1 class="section-title">{{t "Articles"}}</h1>
+                    <div class="section-title-blur">{{t "Articles"}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="luminous-borders-container">
+            <div class="luminous-borders-blur border-b-2"></div>
+            <div class="luminous-borders-solid border-b-2"></div>
+        </div>
+    </div>
+    {{> loop}}
+    {{pagination}}
+</section>

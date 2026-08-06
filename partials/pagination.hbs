@@ -1,0 +1,21 @@
+<div class="relative">
+<div class="py-20 lg:py-[6.5em] px-4 sm:px-8 flex items-center justify-center">
+    <div class="max-w-[800px] lg:max-w-[50em] flex flex-col items-center justify-center gap-4 lg:gap-[1.3em]">
+    <div class="overflow-hidden slide-container">
+        <div class="hover:translate-y-0 transition-all duration-1000 delay-100">
+        <div class="text-[--heading-color] text-sm lg:text-[1em] leading-loose"> {{t "Showing"}} <span id="currArticles">{{limit}}</span> {{t "of"}} {{total}} {{t "Articles"}} </div>
+        </div>
+    </div>
+    {{!-- Load more posts button --}}
+    <button class="js-load-posts relative block uppercase font-medium text-center text-sm lg:text-[0.9em] lg:leading-loose leading-8 text-[--cta-color] hover:text-[--cta-color-hover] bg-[--cta-bg] hover:bg-[--cta-bg-hover] px-4 py-2 border border-[--border-color] transition-all duration-100 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[--cta-bg] before:blur-[--blur-lg] before:-z-10 w-full sm:w-auto">
+        {{t "Load"}} {{limit}} {{t "More articles"}}
+    </button>
+    </div>
+</div>
+<div class="noise-bg"></div>
+<div class="white-bg"></div>
+<div class="luminous-borders-container">
+    <div class="luminous-borders-blur border-b-2"></div>
+    <div class="luminous-borders-solid border-b-2"></div>
+</div>
+</div>

@@ -1,0 +1,85 @@
+<section class="section-hero relative">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="px-4 pt-12 pb-16 sm:px-8 sm:py-20 lg:px-[4em] lg:py-[5em] flex flex-col items-start justify-start gap-8 lg:gap-[2em]">
+            <div class="">
+                <div class="overflow-hidden slide-container py-[1.5vw] lg:py-[0.1em]">
+                    <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                        <div class="relative">
+                            <h1 class="section-hero-title relative font-primary font-bold text-[--heading-color] text-[4rem] leading-none lg:leading-[1.25em]">
+                                {{#if @custom.title}}{{@custom.title}}{{else}}{{@site.title}}{{/if}}
+                            </h1>
+                            <div class="section-hero-title-blur absolute font-primary top-0 left-0 font-bold text-[--heading-color] text-[4rem] leading-none lg:leading-[1.25em] blur-[--blur-sm] -z-[1]">
+                                {{#if @custom.title}}{{@custom.title}}{{else}}{{@site.title}}{{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="section-hero-description transition-all leading-loose duration-1000 delay-100 fade-in mb-2.5 lg:mb-[1em] text-[1.75rem]">
+                {{#if @custom.sub_title}}{{@custom.sub_title}}{{else}}{{@site.description}}{{/if}}
+            </p>
+            <div class="w-full mt-8 lg:mt-[2em] flex flex-col sm:flex-row justify-start items-center gap-y-8 gap-x-12 md:gap-x-10 lg:gap-x-[3em] transition-all duration-1000 delay-100 fade-in">
+                {{#if @custom.hero_button_label}}
+                    <a href="{{#if @custom.hero_button_url}} {{@custom.hero_button_url}} {{else}} # {{/if}}" class="section-hero-custom-button block w-full md:w-[18em] relative py-[9px] sm:py-2 lg:py-[0.5em] px-[14px] sm:px-4 lg:px-[1em] uppercase text-center text-[--cta-color] bg-[--cta-bg] font-medium text-sm sm:text-[0.9rem] lg:text-[0.9em] leading-8 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[--cta-bg] before:blur-[--blur-lg] before:-z-10 hover:bg-[--cta-bg-hover] hover:text-[--cta-color-hover] transition-all duration-200 border border-[--border-color]"> {{@custom.hero_button_label}} </a>
+                {{/if}}
+                <a href="/articles" class="section-hero-articles-button block w-full md:w-[18em] relative py-[9px] sm:py-2 lg:py-[0.5em] px-[14px] sm:px-4 lg:px-[1em] uppercase text-center text-[--cta-color-hover] font-medium text-sm sm:text-[0.9rem] lg:text-[0.9em] leading-8 border border-[--border-color] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:content-['OUR_SERVICES'] before:grid before:place-content-center before:blur-[--blur-lg] before:-z-10 before:bg-transparent hover:bg-[--cta-bg-hover] hover:text-[--cta-color-hover] transition-all duration-200"> {{t "Read Articles"}} </a>
+            </div>
+            <div class="noise-bg"></div>
+            <div class="white-bg"></div>
+        </div>
+        {{#if @site.cover_image}}
+            <div class="section-hero-cover-image relative h-[75vw] sm:h-[60vw] lg:h-auto">
+                <picture>
+                    {{!-- avif will not work with animations. If you plan to use animated images, then remove the avif image source. --}}
+                    <source srcset="{{img_url @site.cover_image size="xxs" format="avif"}} 50w,
+                                {{img_url @site.cover_image size="xs" format="avif"}} 100w,
+                                {{img_url @site.cover_image size="s" format="avif"}} 300w,
+                                {{img_url @site.cover_image size="m" format="avif"}} 500w,
+                                {{img_url @site.cover_image size="l" format="avif"}} 700w,
+                                {{img_url @site.cover_image size="xl" format="avif"}} 1000w,
+                                {{img_url @site.cover_image size="xxl" format="avif"}} 2000w"
+                                sizes="((max-width: 100px)) 100px,
+                                ((min-width: 100px) and (max-width: 500px)) 500px,
+                                ((min-width: 500px) and (max-width: 1000px)) 1000px,
+                                (min-width: 1000px) 1000px" type="image/avif">
+                    <source srcset="{{img_url @site.cover_image size="xxs" format="webp"}} 50w,
+                                {{img_url @site.cover_image size="xs" format="webp"}} 100w,
+                                {{img_url @site.cover_image size="s" format="webp"}} 300w,
+                                {{img_url @site.cover_image size="m" format="webp"}} 500w,
+                                {{img_url @site.cover_image size="l" format="webp"}} 700w,
+                                {{img_url @site.cover_image size="xl" format="webp"}} 1000w,
+                                {{img_url @site.cover_image size="xxl" format="webp"}} 2000w"
+                                sizes="((max-width: 100px)) 100px,
+                                ((min-width: 100px) and (max-width: 500px)) 500px,
+                                ((min-width: 500px) and (max-width: 1000px)) 1000px,
+                                (min-width: 1000px) 1000px" type="image/webp">
+                    <img srcset="{{img_url @site.cover_image size="xxs"}} 50w,
+                                {{img_url @site.cover_image size="xs"}} 100w,
+                                {{img_url @site.cover_image size="s"}} 300w,
+                                {{img_url @site.cover_image size="m"}} 500w,
+                                {{img_url @site.cover_image size="l"}} 700w,
+                                {{img_url @site.cover_image size="xl"}} 1000w,
+                                {{img_url @site.cover_image size="xxl"}} 2000w"
+                                src="{{img_url @site.cover_image size="xl"}}"
+                                sizes="((max-width: 100px)) 100px,
+                                ((min-width: 100px) and (max-width: 500px)) 500px,
+                                ((min-width: 500px) and (max-width: 1000px)) 1000px,
+                                (min-width: 1000px) 1000px"
+                                class="h-full w-full border-2 lg:border-t-0 border-[--border-color] transition-all duration-200 sm:grayscale hover:grayscale-0 object-cover object-center"
+                                width="500" height="500"
+                                alt="{{@site.title}} - {{@site.description}}">
+                    </picture>
+                <div class="luminous-borders-container">
+                    <div class="luminous-borders-blur border-2"></div>
+                    <div class="luminous-borders-solid border-2"></div>
+                </div>
+            </div>
+            {{else}}
+
+        {{/if}}
+    </div>
+    <div class="luminous-borders-container">
+        <div class="luminous-borders-blur border-b-2"></div>
+        <div class="luminous-borders-solid border-b-2"></div>
+    </div>
+</section>

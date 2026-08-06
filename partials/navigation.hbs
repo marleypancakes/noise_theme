@@ -1,0 +1,82 @@
+{{^if isSecondary}}
+    {{! Primary navigation }}
+    {{#foreach navigation to="4"}}
+        <a href="{{url absolute="true"}}" class="desktop-menu-link nav-link mx-[0.5em] lg:mx-[1em] my-[0.5em] {{#if current}}is-active{{/if}}">
+            <div class="transition-transform duration-200">
+                <div class="">{{label}}</div>
+                <div class="">{{label}}</div>
+            </div>
+        </a>
+        <a href="{{url absolute="true"}}" class="mobile-menu-link text-[--nav-text-color] font-bold text-xl leading-7 {{#if current}}is-active{{/if}}">{{label}}</a>
+    {{/foreach}}
+    {{#foreach navigation from="5"}}
+        {{#if @first}}
+            <button type="button" class="desktop-menu-link-btn relative nav-text mx-[0.5em] lg:mx-[1em] my-[0.5em] flex items-center justify-center gap-[1.25em]">
+                <span>{{t "More"}}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="15" viewBox="0 0 24 15" fill="none" class="w-[1em] fill-current">
+                    <path d="M12 14.15L0 2.15L2.15 0L12 9.9L21.85 0.05L24 2.2L12 14.15Z" />
+                </svg>
+                <div data-open="false" class="absolute min-w-max bg-[--body-bg] top-[6em] -left-[1em] border border-[--border-color] border-b-[1em] flex items-start justify-start dropdown-menu">
+                    <div class="flex flex-col items-start justify-center text-left">
+        {{/if}}
+        <a href="{{url absolute="true"}}" class="desktop-menu-link nav-text w-full capitalize my-2.5 mx-5 {{#if current}}is-active{{/if}}"> {{label}} </a>
+        {{#if @last}}
+            </div>
+            </div>
+            <div class="absolute top-0 left-0 h-full w-full z-10 dropdown-button"></div>
+            </button>
+            <a href="{{url absolute="true"}}" class="mobile-menu-link text-[--nav-text-color] font-bold text-xl leading-7 {{#if current}}is-active{{/if}}">{{label}}</a>
+        {{/if}}
+    {{/foreach}}
+{{else}}
+    {{! Secondary navigation }}
+    {{#foreach navigation limit="5"}}
+        {{#if @first}}
+            <div class="w-1/3 sm:w-auto flex flex-col items-start gap-[1.2em]">
+        {{/if}}
+        <div class="footer-link-container">
+            <div class="overflow-hidden slide-container">
+                <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                    <a href="{{url absolute="true"}}" class="page-link footer-link {{#if current}}is-active{{/if}}">{{label}}</a>
+                </div>
+            </div>
+            <div class="footer-link-underline"></div>
+        </div>
+        {{#if @last}}
+            </div>
+        {{/if}}
+    {{/foreach}}
+    {{#foreach navigation limit="5" from="6"}}
+        {{#if @first}}
+            <div class="w-1/3 sm:w-auto flex flex-col items-start gap-[1.2em]">
+        {{/if}}
+        <div class="footer-link-container">
+            <div class="overflow-hidden slide-container">
+                <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                    <a href="{{url absolute="true"}}" class="page-link footer-link {{#if current}}is-active{{/if}}">{{label}}</a>
+                </div>
+            </div>
+            <div class="footer-link-underline"></div>
+        </div>
+        {{#if @last}}
+            </div>
+        {{/if}}
+    {{/foreach}}
+
+    {{#foreach navigation from="11"}}
+        {{#if @first}}
+            <div class="w-1/3 sm:w-auto flex flex-col items-start gap-[1.2em]">
+        {{/if}}
+        <div class="footer-link-container">
+            <div class="overflow-hidden slide-container">
+                <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                    <a href="{{url absolute="true"}}" class="page-link footer-link {{#if current}}is-active{{/if}}">{{label}}</a>
+                </div>
+            </div>
+            <div class="footer-link-underline"></div>
+        </div>
+        {{#if @last}}
+            </div>
+        {{/if}}
+    {{/foreach}}
+{{/if}}

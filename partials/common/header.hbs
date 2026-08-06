@@ -1,0 +1,54 @@
+<header class="py-2.5 lg:pb-[2em] lg:pt-[2.5em] px-4 sm:px-8 lg:px-0 fixed top-0 left-0 w-full bg-[--body-bg] z-99999 transition-[top] duration-1000">
+    <div class="absolute inset-0 mx-auto h-full w-full lg:w-[50vw] hidden sm:flex items-center justify-center">
+        <div class="header-nav hidden lg:flex items-center justify-center z-10">
+            {{navigation}}
+        </div>
+    </div>
+    <nav class="header-logo relative lg:px-[4em] flex items-center justify-between">
+        {{> common/logo}}
+        <div class="header-icons flex items-center justify-center">
+            <div class="header-icons-user flex justify-center items-center w-12 aspect-square mr-2">
+                <a href="#/portal/signup/" aria-label="Sign Up or Account Button">
+                    <svg width="32" height="28" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_503_31740" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="2" y="1" width="21" height="21">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M23 1H2V22H23V1ZM12.5 6C10.8431 6 9.49998 7.34315 9.49998 9V10C9.49998 11.6569 10.8431 13 12.5 13C14.1568 13 15.5 11.6569 15.5 10V9C15.5 7.34315 14.1568 6 12.5 6ZM12.4999 20C15.0496 20 17.3207 18.8072 18.7856 16.9492C17.8432 15.7252 16.3817 15 14.8242 15H10.176C8.61837 15 7.15674 15.7253 6.21436 16.9495C7.67932 18.8073 9.95032 20 12.4999 20Z" fill="var(--nav-text-color)" />
+                        </mask>
+                        <g mask="url(#mask0_503_31740)">
+                            <path d="M12.5 21.25C17.6086 21.25 21.75 17.1086 21.75 12C21.75 6.89137 17.6086 2.75 12.5 2.75C7.39137 2.75 3.25 6.89137 3.25 12C3.25 17.1086 7.39137 21.25 12.5 21.25Z" fill="var(--nav-text-color)" stroke="var(--nav-text-color)" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" />
+                        </g>
+                    </svg>
+                </a>
+            </div>
+            <div data-ghost-search class="header-icons-search flex justify-center items-center w-12 aspect-square mr-2">
+                <a href="#" aria-label="Search Button">
+                    <svg width="32" height="28" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="fill-[--nav-text-color]" d="M11.25 17.5C14.9779 17.5 18 14.4779 18 10.75C18 7.02208 14.9779 4 11.25 4C7.52208 4 4.5 7.02208 4.5 10.75C4.5 14.4779 7.52208 17.5 11.25 17.5Z" stroke="var(--nav-text-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="fill-[--nav-text-color]" d="M16.2002 15.7002L20.3002 19.8002" stroke="var(--nav-text-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+            <div class="header-icons-theme-toggle flex justify-center items-center w-12 aspect-square scale-[0.6] mr-2">
+                <input type="checkbox" name="checkbox" id="theme-toggle" class="hidden" />
+                <label for="theme-toggle" class="cursor-pointer h-12 aspect-square relative flex justify-center items-center">
+                    <div class="w-7 aspect-square flex justify-center items-center overflow-hidden">
+                        <div class="bg-[--nav-text-color] h-5 aspect-square rounded-full" />
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" class="absolute left-0 top-0">
+                        <path class="fill-[--nav-text-color]" d="M24.05 46.55 17.3 40H8v-9.3L1.3 24 8 17.3V8h9.3l6.75-6.7L30.7 8H40v9.3l6.7 6.7-6.7 6.7V40h-9.3Zm0-9.55q5.4 0 9.175-3.8Q37 29.4 37 23.95q0-5.4-3.775-9.175Q29.45 11 24.05 11q-5.45 0-9.25 3.775T11 23.95q0 5.45 3.8 9.25t9.25 3.8Z" />
+                    </svg>
+                </label>
+            </div>
+        </div>
+        <div class="header-icons-mobile-menu h-16 w-16 block p-5 -mr-5 cursor-pointer open-mobile-nav-button">
+            <a href="#" aria-label="Mobile Menu Button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <div class="luminous-borders-container">
+        <div class="luminous-borders-blur border-2"></div>
+        <div class="luminous-borders-solid border-2"></div>
+    </div>
+</header>

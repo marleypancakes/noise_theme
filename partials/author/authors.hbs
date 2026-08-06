@@ -1,0 +1,16 @@
+{{#get "authors" limit="4" include="count.posts" order="count.posts desc"}}
+    {{#if authors}}
+        {{> common/title title=(t "Top Authors")}}
+        <section class="section-authors relative">
+            <div class="grid grid-cols-1 lg:grid-cols-4">
+                {{#foreach authors}}
+                    {{> author/author-card}}
+                {{/foreach}}
+                <div class="luminous-borders-container">
+                    <div class="luminous-borders-blur border-b-2"></div>
+                    <div class="luminous-borders-solid border-b-2"></div>
+                </div>
+            </div>
+        </section>
+    {{/if}}
+{{/get}}

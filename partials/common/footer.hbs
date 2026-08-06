@@ -1,0 +1,56 @@
+<footer>
+    <div class="relative px-8 py-16 lg:px-[4vw] lg:py-[4em] flex flex-col md:flex-row gap-8">
+        <div class="w-full md:w-1/2 flex flex-col justify-between items-start">
+            <div class="flex flex-col gap-5 mb-[1.375rem]">
+                <div class="overflow-hidden slide-container">
+                    <div class="footer-logo translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                        {{> common/logo}}
+                    </div>
+                </div>
+                {{#if @custom.footer_paragraph}}
+                    <p class="footer-paragraph max-w-[50rem] leading-loose fade-in"> {{@custom.footer_paragraph}} </p>
+                {{/if}}
+
+            </div>
+            <div class="footer-social-links w-full sm:w-auto grid sm:flex sm:justify-start-start grid-cols-2 grid-rows-2 sm:grid-cols-4 sm:grid-rows-1 gap-y-4 gap-x-[2em] sm:gap-[2em]">
+                {{#if @site.facebook}}
+                    <a href="{{facebook_url}}" aria-label="Facebook" class="flex gap-x-1"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg></a>
+                {{/if}}
+
+                {{#if @site.twitter}}
+                    <a href="{{twitter_url}}" aria-label="Twitter" class="flex gap-x-1"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg></a>
+                {{/if}}
+            </div>
+        </div>
+        <div class="footer-secondary-nav w-full md:w-1/2 flex justify-between md:justify-end gap-8 md:gap-[110px]">
+            {{navigation type="secondary"}}
+        </div>
+
+    <div class="noise-bg"></div>
+    <div class="white-bg"></div>
+        <div class="luminous-borders-container">
+            <div class="luminous-borders-blur border-0 border-b-2"></div>
+            <div class="luminous-borders-solid border-0 border-b-2"></div>
+        </div>
+    </div>
+    <div class="relative py-8 lg:py-[3em] px-4 sm:px-8 lg:px-[4em]">
+        <div class="flex flex-col sm:flex-row items-start sm:justify-between gap-3">
+            <div class="overflow-hidden slide-container">
+                <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                    <div class="flex items-center justify-center">
+                        <div class="footer-copyright ml-2 lg:ml-[0.5em] text-[--text-color] max-lg:text-[1rem]">
+                            &copy;&nbsp;{{date format="YYYY"}}&nbsp;<a href="{{@site.url}}">{{@site.title}}</a> |
+                            {{{t "Published with {ghost} and {theme}" ghost="<span class=\"font-bold text-[--heading-color]\"><a href=\"https://www.ghost.org/\">Ghost</a></span>" theme="<span class=\"font-bold text-[--heading-color]\"><a href=\"https://themeupstudio.com/shop/noise/\">Noise</a></span>"}}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="noise-bg"></div>
+        <div class="white-bg"></div>
+    </div>
+</footer>
+<div class="luminous-borders-container">
+    <div class="luminous-borders-blur border-2"></div>
+    <div class="luminous-borders-solid border-2"></div>
+</div>

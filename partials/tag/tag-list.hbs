@@ -1,0 +1,17 @@
+{{#get "tags" limit="10" include="count.posts" order="count.posts desc"}}
+{{#if tags}}
+<div class="tag-list relative px-4 sm:px-8 lg:px-[4em] py-12 lg:py-[4em]">
+    <div class="flex items-start md:items-center justify-start transition-all duration-1000 delay-100 fade-in">
+        <div class="flex-row overflow-auto lg:overflow-hidden order-1 sm:order-2 flex items-start md:items-center justify-normal lg:justify-center gap-[19.2px] mr-auto ml-0 sm:ml-auto">
+            {{#foreach tags}}
+                <a href="{{url}}" title="{{name}}" class="tag-list-item text-nowrap relative uppercase text-[--nav-text-color] text-sm lg:text-[1em] lg:text-[0.9em] leading-7 lg:leading-[2em] after:absolute after:top-[calc(100%+4px)] after:left-0 after:bg-[--border-color] after:h-[1px] after:w-0 hover:after:w-full after:transition-all after:duration-300"> {{name}} </a>
+            {{/foreach}}
+        </div>
+    </div>
+    <div class="luminous-borders-container">
+        <div class="luminous-borders-blur border-b-2"></div>
+        <div class="luminous-borders-solid border-b-2"></div>
+    </div>
+</div>
+{{/if}}
+{{/get}}

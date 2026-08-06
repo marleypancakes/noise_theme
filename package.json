@@ -1,0 +1,275 @@
+{
+    "name": "noise",
+    "description": "A Premium Ghost Theme by Theme Up Studio",
+    "demo": "https://noise.themeupstudio.com",
+    "version": "1.0.5",
+    "engines": {
+        "ghost": ">=5.0.0"
+    },
+    "scripts": {
+        "dev": "rollup -c --environment BUILD:development -w",
+        "build": "rollup -c --environment BUILD:production",
+        "zip": "npm run build && mkdir zip && bestzip zip/noise.zip .babelrc.json .github/* assets/* locales/* partials/* *.hbs *.json *.md *.js *.yaml *.lock",
+        "test": "npx gscan .",
+        "pretest": "npm run build"
+    },
+    "author": {
+        "name": "Theme Up Studio",
+        "email": "hello@themeupstudio.com",
+        "url": "https://www.themeupstudio.com"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Newsletter",
+            "Blog",
+            "News",
+            "Minimal",
+            "Magazine"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.21.0",
+        "@babel/preset-env": "^7.20.2",
+        "@rollup/plugin-babel": "^6.0.3",
+        "@rollup/plugin-commonjs": "^25.0.0",
+        "@rollup/plugin-node-resolve": "^15.0.1",
+        "@rollup/plugin-terser": "^0.4.0",
+        "bestzip": "^2.2.1",
+        "postcss": "^8.4.24",
+        "postcss-import": "^15.1.0",
+        "postcss-preset-env": "^8.0.1",
+        "rollup": "^3.18.0",
+        "rollup-plugin-livereload": "^2.0.5",
+        "rollup-plugin-postcss": "^4.0.2"
+    },
+    "browserslist": [
+        "defaults"
+    ],
+    "config": {
+        "card_assets": true,
+        "posts_per_page": 12,
+        "image_sizes": {
+            "xxs": {
+                "width": 50
+            },
+            "xs": {
+                "width": 100
+            },
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 500
+            },
+            "l": {
+                "width": 700
+            },
+            "xl": {
+                "width": 1000
+            },
+            "xxl": {
+                "width": 2000
+            }
+        },
+        "custom":{
+            "title": {
+                "type": "text",
+                "default": "Noise - a silent chaos.",
+                "group": "homepage",
+                "description": "Used as the H1 heading on homepage hero. If not set, then Site Title will be used."
+            },
+            "sub_title": {
+                "type": "text",
+                "default": "Speak your word using this silent, yet loud, Ghost theme. Fully customisable without any need for code editing. Comes with a dark mode.",
+                "group": "homepage",
+                "description": "Used as paragraph below H1 heading on homepage hero. If not set, then Site Description will be used."
+            },
+            "hero_button_label": {
+                "type": "text",
+                "default": "Buy this theme",
+                "group": "homepage",
+                "description": "Label for hero section CTA button. If left blank the button will be hidden."
+            },
+            "hero_button_url": {
+                "type": "text",
+                "default": "https://www.themeupstudio.com/noise/",
+                "group": "homepage",
+                "description": "Link for hero section CTA button. To hide the button, remove the text from Hero Button Label."
+            },
+            "show_brand_logos": {
+                "type": "boolean",
+                "default": false,
+                "group": "homepage",
+                "description": "Carousel of brand logos on homepage. Add brand logos in assets/images/brand-logos directory."
+            },
+            "welcome_title": {
+                "type": "text",
+                "default": "Welcome",
+                "group": "homepage",
+                "description": "Title for the welcome section. If this is left blank then the complete section will be hidden."
+            },
+            "welcome_sub_title": {
+                "type": "text",
+                "default": "Welcome to Noise, your trusted source for an awesome Ghost CMS theme. We are passionate about developing high-quality and out-of-this-world Ghost themes. Noise is no different than what we planned to deliver a unique Ghost theme for our ever-growing buyers.",
+                "group": "homepage",
+                "description": "Paragraph for the welcome section. To hide the Welcome section, remove the Welcome Title text above."
+            },
+            "show_pagination": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage",
+                "description": "Show pagination on home page or show a button to open All Articles page."
+            },
+            "default_color_scheme": {
+                "type": "select",
+                "options": [
+                  "System",
+                  "Light",
+                  "Dark"
+                ],
+                "default": "System",
+                "description": "Color scheme for the website."
+              },
+            "logo_for_dark_mode": {
+                "type": "image",
+                "description": "Logo for dark mode. Ensure the dimensions are same as that of your default logo."
+            },
+            "footer_paragraph": {
+                "type": "text",
+                "default": "Speak your word using this silent, yet loud, Ghost theme. Fully customisable without any need for code editing. Comes with a dark mode.",
+                "description": "Site-wide footer paragraph. If left blank the paragraph will be hidden."
+            },
+            "primary_font": {
+                "type": "select",
+                "options": [
+                    "JAF Lapture",
+                    "Fyodor",
+                    "Super Grotesk Bold",
+                    "Super Grotesk Condensed Bold",
+                    "Super Grotesk Medium",
+                    "Druk Heavy",
+                    "Druk Super",
+                    "Druk Text Bold",
+                    "Druk Text Heavy",
+                    "Abril Fatface",
+                    "Alfa Slab One",
+                    "Alice",
+                    "Amaranth",
+                    "Amatic SC",
+                    "Andika",
+                    "Arvo",
+                    "Cardo",
+                    "Cinzel",
+                    "Corben",
+                    "Dancing Script",
+                    "Elsie",
+                    "Fanwood Text",
+                    "Fauna One",
+                    "Fjalla One",
+                    "Hind",
+                    "Josefin Sans",
+                    "Josefin Slab",
+                    "Lato",
+                    "Libre Baskerville",
+                    "Lora",
+                    "Lustria",
+                    "Merriweather",
+                    "Montserrat",
+                    "Nixie One",
+                    "Nobile",
+                    "Nunito",
+                    "Nunito Sans",
+                    "Open Sans",
+                    "Oswald",
+                    "Palanquin",
+                    "Philosopher",
+                    "Playfair Display",
+                    "Poiret One",
+                    "Poppins",
+                    "Quattrocento",
+                    "Quattrocento Sans",
+                    "Quicksand",
+                    "Raleway",
+                    "Roboto",
+                    "Roboto Mono",
+                    "Sacramento",
+                    "Sansita",
+                    "Six Caps",
+                    "Source Sans Pro",
+                    "Spirax",
+                    "Ubuntu",
+                    "Ubuntu Mono",
+                    "Wendy One",
+                    "Yeseva One"
+                ],
+                "default": "Philosopher",
+                "description": "Font for headings and titles. To change the font, add the class 'font-primary'."
+            },
+            "secondary_font": {
+                "type": "select",
+                "options": [
+                    "JAF Lapture",
+                    "Abril Fatface",
+                    "Alfa Slab One",
+                    "Alice",
+                    "Amaranth",
+                    "Amatic SC",
+                    "Andika",
+                    "Arvo",
+                    "Cardo",
+                    "Cinzel",
+                    "Corben",
+                    "Dancing Script",
+                    "Elsie",
+                    "Fanwood Text",
+                    "Fauna One",
+                    "Fjalla One",
+                    "Hind",
+                    "Josefin Sans",
+                    "Josefin Slab",
+                    "Lato",
+                    "Libre Baskerville",
+                    "Lora",
+                    "Lustria",
+                    "Merriweather",
+                    "Montserrat",
+                    "Nixie One",
+                    "Nobile",
+                    "Nunito",
+                    "Nunito Sans",
+                    "Open Sans",
+                    "Oswald",
+                    "Palanquin",
+                    "Philosopher",
+                    "Playfair Display",
+                    "Poiret One",
+                    "Poppins",
+                    "Quattrocento",
+                    "Quattrocento Sans",
+                    "Quicksand",
+                    "Raleway",
+                    "Roboto",
+                    "Roboto Mono",
+                    "Sacramento",
+                    "Sansita",
+                    "Six Caps",
+                    "Source Sans Pro",
+                    "Spirax",
+                    "Ubuntu",
+                    "Ubuntu Mono",
+                    "Wendy One",
+                    "Yeseva One"
+                ],
+                "default": "Hind",
+                "description": "Font for rest of the body and paragraphs. To change the font, add class 'font-secondary'."
+            }
+        }
+    },
+    "type": "module"
+}

@@ -1,0 +1,832 @@
+{{!-- Load font styles based on Ghost Admin settings. You can read the documentation to add more fonts --}}
+{{!-- Primary Font --}}
+{{#if @custom.primary_font}}
+    {{!-- CUSTOM FONTS ADDED BY MARLEY--}}
+    {{!-- JAF Lapture --}}
+    {{#match @custom.primary_font "JAF Lapture"}}
+    <link rel="preload" href="{{asset 'fonts/JAF-LaptureDisplay-Web-Regular-full.woff2'}}" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: 'JAF Lapture';
+            src: url('{{asset "fonts/JAF-LaptureDisplay-Web-Regular-full.woff2"}}') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JAF Lapture';
+            src: url('{{asset "fonts/JAF-LaptureDisplay-Web-Bold-full.woff2"}}') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JAF Lapture';
+            src: url('{{asset "fonts/JAF-LaptureDisplay-Web-RegularItalic-full.woff2"}}') format('woff2');
+            font-weight: normal;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JAF Lapture';
+            src: url('{{asset "fonts/JAF-LaptureDisplay-Web-BoldItalic-full.woff2"}}') format('woff2');
+            font-weight: bold;
+            font-style: italic;
+            font-display: swap;
+        }
+        body {
+            --font-primary: 'JAF Lapture';
+        }
+    </style>
+    {{/match}}
+
+    {{!-- Fyodor --}}
+    {{#match @custom.primary_font "Fyodor"}}
+    <link rel="preload" href="{{asset 'fonts/fyodor.bold-condensed.woff2'}}" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: 'Fyodor';
+            src: url('{{asset "fonts/fyodor.bold-condensed.woff2"}}') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }    
+        body {
+            --font-primary: 'Fyodor';
+        }
+    </style>
+    {{/match}}
+    {{!-- Super Grotesk Bold --}}
+    {{#match @custom.primary_font "Super Grotesk Bold"}}
+    <link rel="preload" href="{{asset 'fonts/SUPERGROTESKWEB-W03-BOLD.woff2'}}" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: 'Super Grotesk Bold';
+            src: url('{{asset "fonts/SUPERGROTESKWEB-W03-BOLD.woff2"}}') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+    
+        body {
+            --font-primary: 'Super Grotesk Bold';
+        }
+    </style>
+    {{/match}}
+    {{!-- Super Grotesk Condensed Bold --}}
+    {{#match @custom.primary_font "Super Grotesk Condensed Bold"}}
+    <link rel="preload" href="{{asset 'fonts/SUPERGROTESKWEB-W03-CONDBOLD.woff2'}}" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: 'Super Grotesk Condensed Bold';
+            src: url('{{asset "fonts/SUPERGROTESKWEB-W03-CONDBOLD.woff2"}}') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+    
+        body {
+            --font-primary: 'Super Grotesk Condensed Bold';
+        }
+    </style>
+    {{/match}}
+    {{!-- Super Grotesk Medium --}}
+    {{#match @custom.primary_font "Super Grotesk Medium"}}
+    <link rel="preload" href="{{asset 'fonts/SUPERGROTESKWEB-W03-MEDIUM.woff2'}}" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: 'Super Grotesk Medium';
+            src: url('{{asset "fonts/SUPERGROTESKWEB-W03-MEDIUM.woff2"}}') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+    
+        body {
+            --font-primary: 'Super Grotesk Medium';
+        }
+    </style>
+    {{/match}}
+    {{!-- Druk Heavy --}}
+    {{#match @custom.primary_font "Druk Heavy"}}
+    <link rel="preload" href="{{asset 'fonts/Druk-Heavy.woff2'}}" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: 'Druk Heavy';
+            src: url('{{asset "fonts/Druk-Heavy.woff2"}}') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+    
+        body {
+            --font-primary: 'Druk Heavy';
+        }
+    </style>
+    {{/match}}
+    {{!-- Druk Super --}}
+    {{#match @custom.primary_font "Druk Super"}}
+    <link rel="preload" href="{{asset 'fonts/Druk-Super.woff2'}}" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: 'Druk Super';
+            src: url('{{asset "fonts/Druk-Super.woff2"}}') format('woff2');
+            font-weight: bolder;
+            font-style: normal;
+            font-display: swap;
+        }
+    
+        body {
+            --font-primary: 'Druk Super';
+        }
+    </style>
+    {{/match}}
+    {{!-- Druk Text Bold --}}
+    {{#match @custom.primary_font "Druk Text Bold"}}
+    <link rel="preload" href="{{asset 'fonts/DrukText-Bold.woff2'}}" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: 'Druk Text Bold';
+            src: url('{{asset "fonts/DrukText-Bold.woff2"}}') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+    
+        body {
+            --font-primary: 'Druk Text Bold';
+        }
+    </style>
+    {{/match}}{{!-- Druk Text Heavy --}}
+    {{#match @custom.primary_font "Druk Text Heavy"}}
+    <link rel="preload" href="{{asset 'fonts/DrukText-Heavy.woff2'}}" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: 'Druk Text Heavy';
+            src: url('{{asset "fonts/DrukText-Heavy.woff2"}}') format('woff2');
+            font-weight: bolder;
+            font-style: normal;
+            font-display: swap;
+        }
+    
+        body {
+            --font-primary: 'Druk Text Heavy';
+        }
+    </style>
+    {{/match}}
+    {{!-- Abril Fatface --}}
+    {{#match @custom.primary_font "Abril Fatface"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Abril Fatface';}</style>
+    {{/match}}
+    {{!-- Alfa Slab One --}}
+    {{#match @custom.primary_font "Alfa Slab One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Alfa Slab One';}</style>
+    {{/match}}
+    {{!-- Alice --}}
+    {{#match @custom.primary_font "Alice"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Alice&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Alice';}</style>
+    {{/match}}
+    {{!-- Amaranth --}}
+    {{#match @custom.primary_font "Amaranth"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Amaranth';}</style>
+    {{/match}}
+    {{!-- Amatic SC --}}
+    {{#match @custom.primary_font "Amatic SC"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Amatic SC';}</style>
+    {{/match}}
+    {{!-- Andika --}}
+    {{#match @custom.primary_font "Andika"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Andika';}</style>
+    {{/match}}
+    {{!-- Arvo --}}
+    {{#match @custom.primary_font "Arvo"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Arvo';}</style>
+    {{/match}}
+    {{!-- Cardo --}}
+    {{#match @custom.primary_font "Cardo"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Cardo';}</style>
+    {{/match}}
+    {{!-- Cinzel --}}
+    {{#match @custom.primary_font "Cinzel"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Cinzel';}</style>
+    {{/match}}
+    {{!-- Corben --}}
+    {{#match @custom.primary_font "Corben"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Corben';}</style>
+    {{/match}}
+    {{!-- Dancing Script --}}
+    {{#match @custom.primary_font "Dancing Script"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Dancing Script';}</style>
+    {{/match}}
+    {{!-- Elsie --}}
+    {{#match @custom.primary_font "Elsie"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Elsie';}</style>
+    {{/match}}
+    {{!-- Fanwood Text --}}
+    {{#match @custom.primary_font "Fanwood Text"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@0;1&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Fanwood Text';}</style>
+    {{/match}}
+    {{!-- Fauna One --}}
+    {{#match @custom.primary_font "Fauna One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Fauna+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Fauna+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Fauna One';}</style>
+    {{/match}}
+    {{!-- Fjalla One --}}
+    {{#match @custom.primary_font "Fjalla One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Fjalla One';}</style>
+    {{/match}}
+    {{!-- Hind --}}
+    {{#match @custom.primary_font "Hind"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Hind';}</style>
+    {{/match}}
+    {{!-- Josefin Sans --}}
+    {{#match @custom.primary_font "Josefin Sans"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Josefin Sans';}</style>
+    {{/match}}
+    {{!-- Josefin Slab --}}
+    {{#match @custom.primary_font "Josefin Slab"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Josefin Slab';}</style>
+    {{/match}}
+    {{!-- Lato --}}
+    {{#match @custom.primary_font "Lato"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Lato';}</style>
+    {{/match}}
+    {{!-- Libre Baskerville --}}
+    {{#match @custom.primary_font "Libre Baskerville"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Libre Baskerville';}</style>
+    {{/match}}
+    {{!-- Lora --}}
+    {{#match @custom.primary_font "Lora"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Lora';}</style>
+    {{/match}}
+    {{!-- Lustria --}}
+    {{#match @custom.primary_font "Lustria"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Lustria&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Lustria&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Lustria';}</style>
+    {{/match}}
+    {{!-- Merriweather --}}
+    {{#match @custom.primary_font "Merriweather"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Merriweather';}</style>
+    {{/match}}
+    {{!-- Montserrat --}}
+    {{#match @custom.primary_font "Montserrat"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Montserrat';}</style>
+    {{/match}}
+    {{!-- Nixie One --}}
+    {{#match @custom.primary_font "Nixie One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Nixie One';}</style>
+    {{/match}}
+    {{!-- Nobile --}}
+    {{#match @custom.primary_font "Nobile"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Nobile:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Nobile:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Nobile';}</style>
+    {{/match}}
+    {{!-- Nunito --}}
+    {{#match @custom.primary_font "Nunito"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Nunito';}</style>
+    {{/match}}
+    {{!-- Nunito Sans --}}
+    {{#match @custom.primary_font "Nunito Sans"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Nunito Sans';}</style>
+    {{/match}}
+    {{!-- Open Sans --}}
+    {{#match @custom.primary_font "Open Sans"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Open Sans';}</style>
+    {{/match}}
+    {{!-- Oswald --}}
+    {{#match @custom.primary_font "Oswald"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Oswald';}</style>
+    {{/match}}
+    {{!-- Palanquin --}}
+    {{#match @custom.primary_font "Palanquin"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Palanquin';}</style>
+    {{/match}}
+    {{!-- Philosopher --}}
+    {{#match @custom.primary_font "Philosopher"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Philosopher';}</style>
+    {{/match}}
+    {{!-- Playfair Display --}}
+    {{#match @custom.primary_font "Playfair Display"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Playfair Display';}</style>
+    {{/match}}
+    {{!-- Poiret One --}}
+    {{#match @custom.primary_font "Poiret One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Poiret One';}</style>
+    {{/match}}
+    {{!-- Poppins --}}
+    {{#match @custom.primary_font "Poppins"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Poppins';}</style>
+    {{/match}}
+    {{!-- Quattrocento --}}
+    {{#match @custom.primary_font "Quattrocento"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Quattrocento';}</style>
+    {{/match}}
+    {{!-- Quattrocento Sans --}}
+    {{#match @custom.primary_font "Quattrocento Sans"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Quattrocento Sans';}</style>
+    {{/match}}
+    {{!-- Quicksand --}}
+    {{#match @custom.primary_font "Quicksand"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Quicksand';}</style>
+    {{/match}}
+    {{!-- Raleway --}}
+    {{#match @custom.primary_font "Raleway"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Raleway';}</style>
+    {{/match}}
+    {{!-- Roboto --}}
+    {{#match @custom.primary_font "Roboto"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Roboto';}</style>
+    {{/match}}
+    {{!-- Roboto Mono --}}
+    {{#match @custom.primary_font "Roboto Mono"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Roboto Mono';}</style>
+    {{/match}}
+    {{!-- Sacramento --}}
+    {{#match @custom.primary_font "Sacramento"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Sacramento';}</style>
+    {{/match}}
+    {{!-- Sansita --}}
+    {{#match @custom.primary_font "Sansita"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Sansita';}</style>
+    {{/match}}
+    {{!-- Six Caps --}}
+    {{#match @custom.primary_font "Six Caps"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Six Caps';}</style>
+    {{/match}}
+    {{!-- Source Sans Pro --}}
+    {{#match @custom.primary_font "Source Sans Pro"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Source Sans Pro';}</style>
+    {{/match}}
+    {{!-- Spirax --}}
+    {{#match @custom.primary_font "Spirax"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Spirax&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Spirax&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Spirax';}</style>
+    {{/match}}
+    {{!-- Ubuntu --}}
+    {{#match @custom.primary_font "Ubuntu"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Ubuntu';}</style>
+    {{/match}}
+    {{!-- Ubuntu Mono --}}
+    {{#match @custom.primary_font "Ubuntu Mono"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Ubuntu Mono';}</style>
+    {{/match}}
+    {{!-- Wendy One --}}
+    {{#match @custom.primary_font "Wendy One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Wendy One';}</style>
+    {{/match}}
+    {{!-- Yeseva One --}}
+    {{#match @custom.primary_font "Yeseva One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-primary:'Yeseva One';}</style>
+    {{/match}}
+{{else}}
+    {{!-- Default Primary Font --}}
+    {{!-- Playfair Display --}}
+    <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></noscript>
+    <style>body{--font-primary:'Playfair Display';}</style>
+{{/if}}
+{{!-- Secondary Font --}}
+{{#if @custom.secondary_font}}
+    {{!-- CUSTOM FONTS ADDED BY MARLEY--}}
+    {{!-- JAF Lapture --}}
+    {{#match @custom.secondary_font "JAF Lapture"}}
+    <link rel="preload" href="{{asset 'fonts/JAF-LaptureDisplay-Web-Regular-full.woff2'}}" as="font" type="font/woff2">
+    <style>
+        @font-face {
+            font-family: 'JAF Lapture';
+            src: url('{{asset "fonts/JAF-LaptureDisplay-Web-Regular-full.woff2"}}') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JAF Lapture';
+            src: url('{{asset "fonts/JAF-LaptureDisplay-Web-Bold-full.woff2"}}') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JAF Lapture';
+            src: url('{{asset "fonts/JAF-LaptureDisplay-Web-RegularItalic-full.woff2"}}') format('woff2');
+            font-weight: normal;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JAF Lapture';
+            src: url('{{asset "fonts/JAF-LaptureDisplay-Web-BoldItalic-full.woff2"}}') format('woff2');
+            font-weight: bold;
+            font-style: italic;
+            font-display: swap;
+        }
+    
+        body {
+            --font-secondary: 'JAF Lapture';
+        }
+    </style>
+    {{/match}}
+
+    {{!-- Abril Fatface --}}
+    {{#match @custom.secondary_font "Abril Fatface"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Abril Fatface';}</style>
+    {{/match}}
+    {{!-- Alfa Slab One --}}
+    {{#match @custom.secondary_font "Alfa Slab One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Alfa Slab One';}</style>
+    {{/match}}
+    {{!-- Alice --}}
+    {{#match @custom.secondary_font "Alice"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Alice&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Alice';}</style>
+    {{/match}}
+    {{!-- Amaranth --}}
+    {{#match @custom.secondary_font "Amaranth"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Amaranth';}</style>
+    {{/match}}
+    {{!-- Amatic SC --}}
+    {{#match @custom.secondary_font "Amatic SC"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Amatic SC';}</style>
+    {{/match}}
+    {{!-- Andika --}}
+    {{#match @custom.secondary_font "Andika"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Andika';}</style>
+    {{/match}}
+    {{!-- Arvo --}}
+    {{#match @custom.secondary_font "Arvo"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Arvo';}</style>
+    {{/match}}
+    {{!-- Cardo --}}
+    {{#match @custom.secondary_font "Cardo"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Cardo';}</style>
+    {{/match}}
+    {{!-- Cinzel --}}
+    {{#match @custom.secondary_font "Cinzel"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Cinzel';}</style>
+    {{/match}}
+    {{!-- Corben --}}
+    {{#match @custom.secondary_font "Corben"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Corben';}</style>
+    {{/match}}
+    {{!-- Dancing Script --}}
+    {{#match @custom.secondary_font "Dancing Script"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Dancing Script';}</style>
+    {{/match}}
+    {{!-- Elsie --}}
+    {{#match @custom.secondary_font "Elsie"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Elsie';}</style>
+    {{/match}}
+    {{!-- Fanwood Text --}}
+    {{#match @custom.secondary_font "Fanwood Text"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@0;1&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@0;1&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Fanwood Text';}</style>
+    {{/match}}
+    {{!-- Fauna One --}}
+    {{#match @custom.secondary_font "Fauna One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Fauna+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Fauna+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Fauna One';}</style>
+    {{/match}}
+    {{!-- Fjalla One --}}
+    {{#match @custom.secondary_font "Fjalla One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Fjalla One';}</style>
+    {{/match}}
+    {{!-- Hind --}}
+    {{#match @custom.secondary_font "Hind"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Hind';}</style>
+    {{/match}}
+    {{!-- Josefin Sans --}}
+    {{#match @custom.secondary_font "Josefin Sans"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Josefin Sans';}</style>
+    {{/match}}
+    {{!-- Josefin Slab --}}
+    {{#match @custom.secondary_font "Josefin Slab"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Josefin Slab';}</style>
+    {{/match}}
+    {{!-- Lato --}}
+    {{#match @custom.secondary_font "Lato"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Lato';}</style>
+    {{/match}}
+    {{!-- Libre Baskerville --}}
+    {{#match @custom.secondary_font "Libre Baskerville"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Libre Baskerville';}</style>
+    {{/match}}
+    {{!-- Lora --}}
+    {{#match @custom.secondary_font "Lora"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Lora';}</style>
+    {{/match}}
+    {{!-- Lustria --}}
+    {{#match @custom.secondary_font "Lustria"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Lustria&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Lustria&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Lustria';}</style>
+    {{/match}}
+    {{!-- Merriweather --}}
+    {{#match @custom.secondary_font "Merriweather"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Merriweather';}</style>
+    {{/match}}
+    {{!-- Montserrat --}}
+    {{#match @custom.secondary_font "Montserrat"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Montserrat';}</style>
+    {{/match}}
+    {{!-- Nixie One --}}
+    {{#match @custom.secondary_font "Nixie One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Nixie One';}</style>
+    {{/match}}
+    {{!-- Nobile --}}
+    {{#match @custom.secondary_font "Nobile"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Nobile:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Nobile:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Nobile';}</style>
+    {{/match}}
+    {{!-- Nunito --}}
+    {{#match @custom.secondary_font "Nunito"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Nunito';}</style>
+    {{/match}}
+    {{!-- Nunito Sans --}}
+    {{#match @custom.secondary_font "Nunito Sans"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Nunito Sans';}</style>
+    {{/match}}
+    {{!-- Open Sans --}}
+    {{#match @custom.secondary_font "Open Sans"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Open Sans';}</style>
+    {{/match}}
+    {{!-- Oswald --}}
+    {{#match @custom.secondary_font "Oswald"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Oswald';}</style>
+    {{/match}}
+    {{!-- Palanquin --}}
+    {{#match @custom.secondary_font "Palanquin"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Palanquin';}</style>
+    {{/match}}
+    {{!-- Philosopher --}}
+    {{#match @custom.secondary_font "Philosopher"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Philosopher';}</style>
+    {{/match}}
+    {{!-- Playfair Display --}}
+    {{#match @custom.secondary_font "Playfair Display"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Playfair Display';}</style>
+    {{/match}}
+    {{!-- Poiret One --}}
+    {{#match @custom.secondary_font "Poiret One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Poiret One';}</style>
+    {{/match}}
+    {{!-- Poppins --}}
+    {{#match @custom.secondary_font "Poppins"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Poppins';}</style>
+    {{/match}}
+    {{!-- Quattrocento --}}
+    {{#match @custom.secondary_font "Quattrocento"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Quattrocento';}</style>
+    {{/match}}
+    {{!-- Quattrocento Sans --}}
+    {{#match @custom.secondary_font "Quattrocento Sans"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Quattrocento Sans';}</style>
+    {{/match}}
+    {{!-- Quicksand --}}
+    {{#match @custom.secondary_font "Quicksand"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Quicksand';}</style>
+    {{/match}}
+    {{!-- Raleway --}}
+    {{#match @custom.secondary_font "Raleway"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Raleway';}</style>
+    {{/match}}
+    {{!-- Roboto --}}
+    {{#match @custom.secondary_font "Roboto"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Roboto';}</style>
+    {{/match}}
+    {{!-- Roboto Mono --}}
+    {{#match @custom.secondary_font "Roboto Mono"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Roboto Mono';}</style>
+    {{/match}}
+    {{!-- Sacramento --}}
+    {{#match @custom.secondary_font "Sacramento"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Sacramento';}</style>
+    {{/match}}
+    {{!-- Sansita --}}
+    {{#match @custom.secondary_font "Sansita"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Sansita';}</style>
+    {{/match}}
+    {{!-- Six Caps --}}
+    {{#match @custom.secondary_font "Six Caps"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Six Caps';}</style>
+    {{/match}}
+    {{!-- Source Sans Pro --}}
+    {{#match @custom.secondary_font "Source Sans Pro"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Source Sans Pro';}</style>
+    {{/match}}
+    {{!-- Spirax --}}
+    {{#match @custom.secondary_font "Spirax"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Spirax&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Spirax&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Spirax';}</style>
+    {{/match}}
+    {{!-- Ubuntu --}}
+    {{#match @custom.secondary_font "Ubuntu"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Ubuntu';}</style>
+    {{/match}}
+    {{!-- Ubuntu Mono --}}
+    {{#match @custom.secondary_font "Ubuntu Mono"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Ubuntu Mono';}</style>
+    {{/match}}
+    {{!-- Wendy One --}}
+    {{#match @custom.secondary_font "Wendy One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Wendy One';}</style>
+    {{/match}}
+    {{!-- Yeseva One --}}
+    {{#match @custom.secondary_font "Yeseva One"}}
+        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+        <noscript><link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet"></noscript>
+        <style>body{--font-secondary:'Yeseva One';}</style>
+    {{/match}}
+{{else}}
+    {{!-- Default secondary Font --}}
+    {{!-- Open Sans --}}
+    <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"></noscript>
+    <style>body{--font-secondary:'Open Sans';}</style>
+{{/if}}

@@ -1,0 +1,90 @@
+<div class="author-card relative flex flex-col md:flex-row lg:flex-col items-start justify-start">
+    <a href="{{url}}" class="relative w-full md:w-1/3 lg:w-full">
+        {{#if profile_image}}
+            <picture class="author-card-profile-image min-h-full min-w-full">
+                {{!-- avif will not work with animations. If you plan to use animated images, then remove the avif image source. --}}
+                <source srcset="{{img_url profile_image size="xxs" format="avif"}} 50w,
+                        {{img_url profile_image size="xs" format="avif"}} 100w,
+                        {{img_url profile_image size="s" format="avif"}} 300w,
+                        {{img_url profile_image size="m" format="avif"}} 500w,
+                        {{img_url profile_image size="l" format="avif"}} 700w,
+                        {{img_url profile_image size="xl" format="avif"}} 1000w,
+                        {{img_url profile_image size="xxl" format="avif"}} 2000w" sizes="((max-width: 100px)) 100px,
+                      ((min-width: 100px) and (max-width: 500px)) 500px,
+                      ((min-width: 500px) and (max-width: 1000px)) 1000px,
+                      (min-width: 1000px) 2000px" type="image/avif">
+                <source srcset="{{img_url profile_image size="xxs" format="webp"}} 50w,
+                        {{img_url profile_image size="xs" format="webp"}} 100w,
+                        {{img_url profile_image size="s" format="webp"}} 300w,
+                        {{img_url profile_image size="m" format="webp"}} 500w,
+                        {{img_url profile_image size="l" format="webp"}} 700w,
+                        {{img_url profile_image size="xl" format="webp"}} 1000w,
+                        {{img_url profile_image size="xxl" format="webp"}} 2000w" sizes="((max-width: 100px)) 100px,
+                      ((min-width: 100px) and (max-width: 500px)) 500px,
+                      ((min-width: 500px) and (max-width: 1000px)) 1000px,
+                      (min-width: 1000px) 2000px" type="image/webp">
+                <img srcset="{{img_url profile_image size="xxs"}} 50w,
+                                {{img_url profile_image size="xs"}} 100w,
+                                {{img_url profile_image size="s"}} 300w,
+                                {{img_url profile_image size="m"}} 500w,
+                                {{img_url profile_image size="l"}} 700w,
+                                {{img_url profile_image size="xl"}} 1000w,
+                                {{img_url profile_image size="xxl"}} 2000w" src="{{img_url profile_image size="l"}}" sizes="((max-width: 100px)) 100px,
+                            ((min-width: 100px) and (max-width: 500px)) 500px,
+                            ((min-width: 500px) and (max-width: 1000px)) 1000px,
+                            (min-width: 1000px) 2000px" class="relative h-96 w-full p-4 border-2 border-l-0 border-t-0 border-[--border-color] object-cover object-center transition-all duration-200 sm:grayscale hover:grayscale-0" loading="lazy" width="632" height="355" alt="{{name}}">
+            </picture>
+        {{else}}
+            <div class="author-card-no-image relative h-96 w-full border-2 border-l-0 border-t-0 border-[--border-color] object-cover object-center transition-all duration-200 sm:grayscale hover:grayscale-0">
+                <div class="noise-bg"></div>
+                <div class="white-bg"></div>
+            </div>
+        {{/if}}
+        <div class="luminous-borders-container">
+            <div class="luminous-borders-blur border-2 border-l-0 border-t-0"></div>
+            <div class="luminous-borders-solid border-2 border-l-0 border-t-0"></div>
+        </div>
+    </a>
+    <div class="w-full md:w-2/3 lg:w-full lg:h-full px-4 sm:px-8 lg:px-[4em] py-12 sm:pt-12 sm:pb-8 lg:py-[2.5em] flex flex-col items-start justify-start gap-[11.2px] xl:gap-[0.7em]">
+        <div class="overflow-hidden slide-container">
+            <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                <a href="{{url}}" class="author-card-url">
+                    <div class="author-card-post-count uppercase text-[--text-color] text-xs lg:text-[0.9em] leading-loose lg:leading-[2em]">
+                        {{#if post_count}}
+                            {{post_count}}
+                        {{else}}
+                            {{plural count.posts empty=(t 'No Articles') singular=(t '1 Article') plural=(t '% Articles')}}
+                        {{/if}}
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="overflow-hidden slide-container">
+            <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                <a href="{{url}}" class="author-card-url">
+                    <div class="author-card-name capitalize text-[--heading-color] font-primary font-bold text-2xl lg:text-[1.8em] leading-8 lg:leading-[2em]">
+                        {{name}}
+                        {{#if location}}<br/><span class="author-card-location uppercase text-[--text-color] text-xs leading-loose lg:leading-[2em]">( {{location}} )</span>{{/if}}
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="author-card-social-links overflow-hidden slide-container">
+            <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                {{> author/author-socials}}
+            </div>
+        </div>
+        {{#if bio}}
+        <a href="{{url}}" class="author-card-url">
+            <p class="author-card-bio transition-all duration-1000 delay-100 fade-in">
+                {{bio}}
+            </p>
+        </a>
+        {{/if}}
+        <div class="h-8 aspect-square lg:h-[2.5em]"></div>
+    </div>
+    <div class="luminous-borders-container">
+        <div class="luminous-borders-blur border-b-2 border-r-2"></div>
+        <div class="luminous-borders-solid border-b-2 border-r-2"></div>
+    </div>
+</div>

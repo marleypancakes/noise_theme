@@ -1,0 +1,305 @@
+.kg-card,
+blockquote,
+p:not(figcaption p),
+ul,
+ol {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/*Font Sizes*/
+.kg-bookmark-title {
+    font-size: 1.5rem !important;
+}
+
+.kg-bookmark-description {
+    font-size: 1rem !important;
+}
+
+.kg-bookmark-metadata {
+    font-size: 0.8rem !important;
+}
+
+.kg-callout-emoji,
+.kg-callout-text {
+    font-size: 1.2rem !important;
+    line-height: 1.2rem !important;
+}
+
+/*Image Gallery Width*/
+.kg-width-wide,
+.kg-width-wide img {
+    width: calc(80vw);
+    margin-left: calc(-40vw + 50%);
+}
+
+.kg-width-full,
+.kg-width-full img {
+    width: calc(98vw);
+    margin-left: calc(-49vw + 50%);
+    padding: 0;
+}
+
+/*Button Styles*/
+.kg-btn,
+.kg-product-card-button,
+.kg-header-card-button {
+    border-radius: 0px !important;
+    border: 2px solid var(--border-color) !important;
+    -webkit-box-shadow: inset 0px 0px var(--blur-lg) 0px var(--border-color), 0px 0px var(--blur-lg) 0px var(--border-color);
+    box-shadow: inset 0px 0px var(--blur-lg) 0px var(--border-color), 0px 0px var(--blur-lg) 0px var(--border-color);
+    font-family: inherit !important;
+    justify-content: center !important;
+    height: inherit !important;
+    background-color: var(--cta-bg) !important;
+    text-align: center !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    line-height: 2rem !important;
+    color: var(--cta-color) !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-bottom: .5rem !important;
+    padding-top: .5rem !important;
+    font-size: .9rem !important;
+}
+
+.kg-btn {
+    width: 18rem !important;
+}
+
+/*Common Border Styles*/
+.kg-bookmark-container,
+.kg-callout-card,
+.kg-toggle-card,
+.kg-video-container,
+.kg-audio-card,
+.kg-file-card-container,
+.kg-product-card-container,
+.kg-header-card,
+.kg-callout-card-white,
+.gh-signup-root,
+.kg-signup-card {
+    border-radius: 0px !important;
+    border: 2px solid var(--border-color) !important;
+    -webkit-box-shadow: inset 0px 0px var(--blur-lg) 0px var(--border-color), 0px 0px var(--blur-lg) 0px var(--border-color) !important;
+    box-shadow: inset 0px 0px var(--blur-lg) 0px var(--border-color), 0px 0px var(--blur-lg) 0px var(--border-color) !important;
+}
+
+.kg-toggle-card, .kg-callout-card {
+    padding: 15px 10px !important;
+}
+
+.kg-header-card.kg-width-full .kg-header-card-subheading:not(.kg-layout-split .kg-header-card-subheading),
+.kg-header-card.kg-width-wide .kg-header-card-subheading,
+.kg-header-card .kg-header-card-subheading,
+.kg-header-card.kg-width-full.kg-layout-split .kg-header-card-subheading,
+.kg-signup-card.kg-width-wide .kg-signup-card-subheading,
+.kg-signup-card .kg-signup-card-subheading {
+    font-size: clamp(1.05rem,2vw,1.7rem) !important;
+}
+
+.kg-header-card-image {
+    padding: 1rem !important;
+}
+
+.kg-bookmark-thumbnail {
+    border-radius: 0px !important;
+    -webkit-box-shadow: inset 0px 0px var(--blur-lg) 0px var(--border-color), 0px 0px var(--blur-lg) 0px var(--border-color);
+    box-shadow: inset 0px 0px var(--blur-lg) 0px var(--border-color), 0px 0px var(--blur-lg) 0px var(--border-color);
+}
+
+.kg-toggle-card-icon svg {
+    color: var(--text-color);
+}
+
+.kg-toggle-card h4.kg-toggle-heading-text {
+    font-size: 1.15rem !important;
+}
+
+.kg-toggle-card .kg-toggle-content p {
+    font-size: 0.95rem !important;
+    line-height: 1.5rem !important;
+}
+/*Gallery Styles*/
+.kg-gallery-card,
+.kg-gallery-card * {
+    box-sizing: border-box;
+}
+
+.kg-gallery-card,
+.kg-image-card {
+    --gap: 0.2rem;
+}
+
+.kg-gallery-card {
+    margin: 0 auto;
+}
+
+.kg-gallery-card,
+.kg-gallery-card img {
+    margin-left: 0 !important;
+    width: auto !important;
+    min-height: auto !important;
+    border-radius: var(--corner-radius);
+}
+
+.kg-image-card:not(.kg-card-hascaption)+.kg-image-card,
+.kg-image-card:not(.kg-card-hascaption)+.kg-gallery-card,
+.kg-gallery-card:not(.kg-card-hascaption)+.kg-image-card,
+.kg-gallery-card:not(.kg-card-hascaption)+.kg-gallery-card {
+    margin-top: var(--gap);
+}
+
+.kg-gallery-container {
+    position: relative;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: var(--gap) !important;
+}
+
+.kg-gallery-image {
+    margin-bottom: 0 !important;
+}
+
+.kg-gallery-image img {
+    display: block;
+    margin: 0 auto;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 var(--gap);
+}
+
+@media (max-width: 600px) {
+
+    .kg-gallery-card,
+    .kg-image-card {
+        --gap: 0.6rem;
+    }
+}
+
+.kg-style-light {
+    color: #1e1e1e;
+}
+
+.kg-style-light .kg-header-card-button {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 2px solid #000 !important;
+    -webkit-box-shadow: inset 0px 0px var(--blur-lg) 0px #000, 0px 0px var(--blur-lg) 0px #000;
+    box-shadow: inset 0px 0px var(--blur-lg) 0px #000, 0px 0px var(--blur-lg) 0px #000;
+}
+
+.kg-style-accent .kg-header-card-button {
+    background-color: #fff !important;
+    color: var(--ghost-accent-color) !important;
+    border: 2px solid var(--ghost-accent-color) !important;
+    -webkit-box-shadow: inset 0px 0px var(--blur-lg) 0px var(--ghost-accent-color), 0px 0px var(--blur-lg) 0px var(--ghost-accent-color);
+    box-shadow: inset 0px 0px var(--blur-lg) 0px var(--ghost-accent-color), 0px 0px var(--blur-lg) 0px var(--ghost-accent-color);
+}
+
+blockquote,
+.kg-blockquote-alt {
+    font-size: 1.5rem;
+    padding: 2rem 4rem;
+    border-radius: 0px !important;
+    border: 2px solid var(--border-color) !important;
+    -webkit-box-shadow: inset 0px 0px var(--blur-lg) 0px var(--border-color), 0px 0px var(--blur-lg) 0px var(--border-color);
+    box-shadow: inset 0px 0px var(--blur-lg) 0px var(--border-color), 0px 0px var(--blur-lg) 0px var(--border-color);
+}
+
+.kg-align-center {
+    text-align: center;
+}
+
+.kg-v2 {
+    padding: 2rem 4rem;
+}
+.kg-file-card-icon {
+    background: var(--ghost-accent-color) !important;
+}
+.kg-file-card-icon svg {
+    color: #fff !important;
+}
+/*Embedded Sign Up Card*/
+.gh-signup-root > div:first-child {
+    position: relative !important;
+}
+.kg-header-card.kg-width-full.kg-layout-split h2.kg-header-card-heading,
+.kg-signup-card.kg-width-full.kg-layout-split h2.kg-signup-card-heading
+.kg-signup-card.kg-width-full h2.kg-signup-card-heading,
+.kg-header-card h2.kg-header-card-heading,
+.kg-signup-card h2.kg-signup-card-heading {
+    font-size: clamp(1.7rem,5vw,3.3rem) !important;
+}
+/*Wide Cards*/
+@media screen and (min-width:1160px) {
+
+    .kg-width-wide,
+    .kg-width-wide img {
+        margin-left: calc(-49vw + 50% + 250px);
+        width: calc(98vw - 500px)
+    }
+}
+@media screen and (max-width:1160px) {
+
+    .kg-width-wided,
+    .kg-width-wided img {
+        margin-left: calc(-49vw + 50%);
+        width: 98vw
+    }
+
+    .kg-width-wide:not(.kg-gallery-card),
+    .kg-width-wide img:not(.kg-gallery-card img) {
+        align-self: center;
+        height: auto;
+        max-width: 98vw !important;
+    }
+}
+
+@media (max-width: 640px){
+    .kg-signup-card-input, .kg-signup-card-button,
+    .kg-signup-card.kg-width-full .kg-signup-card-button, 
+    .kg-signup-card.kg-width-wide .kg-signup-card-button {
+        font-size: 1rem !important;
+    }
+
+    .kg-width-wide:not(.kg-gallery-card), .kg-width-wide img:not(.kg-gallery-card img),
+    .kg-width-regular, .kg-width-regular img {
+        width: 98vw !important;
+        margin-left: calc(-49vw + 50%) !important;
+    }
+}
+/*Responsive Bookmark Card*/
+@media screen and (max-width:768px) {
+    .kg-bookmark-thumbnail {
+        padding-top: 56.25%;
+    }
+
+    .kg-bookmark-container {
+        flex-direction: column-reverse;
+    }
+}
+/*Prism Js*/
+code[class*=language-], pre[class*=language-] {
+    font-size: 1rem !important;
+}
+div.code-toolbar>.toolbar>.toolbar-item>a, div.code-toolbar>.toolbar>.toolbar-item>button, div.code-toolbar>.toolbar>.toolbar-item>span {
+    font-size: 0.8rem !important;
+}
+
+/*Embed Cards*/
+.kg-embed-card div{
+    margin: 0 auto;
+}
+
+iframe {
+    margin: 0 auto !important;
+}

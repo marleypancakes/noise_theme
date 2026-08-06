@@ -1,0 +1,90 @@
+{{#match @page.show_title_and_feature_image}}
+        <section class="section-page-hero relative page">
+            {{#if feature_image}}
+                <div class="relative flex flex-col lg:flex-row justify-start">
+                    <div class="w-full lg:w-1/2 px-4 sm:px-8 lg:px-[4em]  flex flex-col items-start">
+                        <div class="py-[1.5rem] lg:py-[2.5em] flex items-center justify-center">
+                            <div class="overflow-hidden slide-container">
+                                <div class="relative mx-4 translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                                    <h1 class="section-title">{{title}}</h1>
+                                    <div class="section-title-blur">{{title}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {{#if custom_excerpt}}
+                            <p class="js-content-excerpt mx-4 mb-12 lg:mb-[4em] transition-all duration-1000 delay-100 fade-in"> {{custom_excerpt}} </p>
+                        {{/if}}
+                        <div class="noise-bg"></div>
+                        <div class="white-bg"></div>
+                    </div>
+                    <div class="relative w-full lg:w-1/2 ">
+                        <figure>
+                            <picture>
+                                <source srcset="{{img_url feature_image size="xxs" format="avif"}} 50w,
+                                {{img_url feature_image size="xs" format="avif"}} 100w,
+                                {{img_url feature_image size="s" format="avif"}} 300w,
+                                {{img_url feature_image size="m" format="avif"}} 500w,
+                                {{img_url feature_image size="l" format="avif"}} 700w,
+                                {{img_url feature_image size="xl" format="avif"}} 1000w,
+                                {{img_url feature_image size="xxl" format="avif"}} 2000w" sizes="((max-width: 100px)) 100px,
+                                ((min-width: 100px) and (max-width: 500px)) 500px,
+                                ((min-width: 500px) and (max-width: 1000px)) 1000px,
+                                (min-width: 1000px) 2000px" type="image/avif">
+                                <source srcset="{{img_url feature_image size="xxs" format="webp"}} 50w,
+                                {{img_url feature_image size="xs" format="webp"}} 100w,
+                                {{img_url feature_image size="s" format="webp"}} 300w,
+                                {{img_url feature_image size="m" format="webp"}} 500w,
+                                {{img_url feature_image size="l" format="webp"}} 700w,
+                                {{img_url feature_image size="xl" format="webp"}} 1000w,
+                                {{img_url feature_image size="xxl" format="webp"}} 2000w" sizes="((max-width: 100px)) 100px,
+                                ((min-width: 100px) and (max-width: 500px)) 500px,
+                                ((min-width: 500px) and (max-width: 1000px)) 1000px,
+                                (min-width: 1000px) 2000px" type="image/webp">
+                                <img srcset="{{img_url feature_image size="xxs"}} 50w,
+                                {{img_url feature_image size="xs"}} 100w,
+                                {{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 500w,
+                                {{img_url feature_image size="l"}} 700w,
+                                {{img_url feature_image size="xl"}} 1000w,
+                                {{img_url feature_image size="xxl"}} 2000w" src="{{img_url feature_image size="xl"}}" sizes="((max-width: 100px)) 100px,
+                                ((min-width: 100px) and (max-width: 500px)) 500px,
+                                ((min-width: 500px) and (max-width: 1000px)) 1000px,
+                                (min-width: 1000px) 2000px" class="h-full w-full border-2 border-t-0 border-[--border-color] object-cover object-center transition-all duration-200 sm:grayscale hover:grayscale-0" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
+                            </picture>
+                            {{#if feature_image_caption}}
+                                <figcaption class="mb-2">{{feature_image_caption}}</figcaption>
+                            {{/if}}
+                        </figure>
+                        <div class="luminous-borders-container">
+                            <div class="luminous-borders-blur border-0 border-l-2"></div>
+                            <div class="luminous-borders-solid border-0 border-l-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="luminous-borders-container">
+                    <div class="luminous-borders-blur border-0 border-b-2"></div>
+                    <div class="luminous-borders-solid border-0 border-b-2"></div>
+                </div>
+            {{else}}
+                <div class="relative">
+                    <div class="py-[1.5rem] lg:py-[2.5em] px-4 flex items-center justify-center">
+                        <div class="overflow-hidden slide-container">
+                            <div class="relative mt-1.5 mx-4 translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                                <h1 class="section-title">{{title}}</h1>
+                                <div class="section-title-blur">{{title}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {{#if custom_excerpt}}
+                        <p class="js-content-excerpt transition-all duration-1000 delay-100 pb-10 px-8 lg:px-[4vw] flex items-center text-center justify-center fade-in"> {{custom_excerpt}} </p>
+                    {{/if}}
+                    <div class="noise-bg"></div>
+                    <div class="white-bg"></div>
+                    <div class="luminous-borders-container">
+                        <div class="luminous-borders-blur border-b-2"></div>
+                        <div class="luminous-borders-solid border-b-2"></div>
+                    </div>
+                </div>
+            {{/if}}
+        </section>
+    {{/match}}

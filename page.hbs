@@ -1,0 +1,19 @@
+{{!< default}}
+{{#contentFor 'scripts'}}
+  <script src="{{asset "js/prism.js"}}"></script>
+{{/contentFor}}
+{{#contentFor 'styles'}}
+  <link href="{{asset "css/prism.css"}}" rel="stylesheet" />
+{{/contentFor}}
+{{#page}}
+    {{> common/page-hero}}
+    <section class="section-page relative px-4 sm:px-8 lg:px-[4em] pb-16 sm:pb-36 lg:pb-[9em] pt-20 lg:pt-[6.5em]">
+        <div class="lg:max-w-[50em] mx-auto transition-all duration-1000 delay-100 fade-in">
+            {{content}}
+        </div>
+        <div class="luminous-borders-container">
+            <div class="luminous-borders-blur border-b-2"></div>
+            <div class="luminous-borders-solid border-b-2"></div>
+        </div>
+    </section>
+{{/page}}

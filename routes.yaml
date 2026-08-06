@@ -1,0 +1,30 @@
+routes:
+  /authors/:
+    template: authors
+    data: page.authors
+  /tags/:
+    template: tags
+    data: page.tags
+  /articles/:
+    template: articles
+    data: page.articles
+    controller: channel
+  /featured/:
+    template: featured
+    data: page.featured
+    controller: channel
+    filter: featured:true
+  /members/:
+    template: members
+    data: page.members
+    controller: channel
+    filter: visibility:[members,paid,tiers]
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

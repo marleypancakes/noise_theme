@@ -1,0 +1,68 @@
+/* Variables
+/* ---------------------------------------------------------- */
+
+@font-face {
+    font-family: "JAF Lapture";
+    src: url("../fonts/JAF-LaptureDisplay-Web-Regular-full.woff2") format("WOFF2");
+    src: url("../fonts/DEMO-JAF-Lapture-Web-Regular-subset.woff2") format("WOFF2");
+    src: url("../fonts/DEMO-JAF-Lapture-Web-RegularItalic-full.woff2") format("WOFF2");
+    src: url("../fonts/DEMO-JAF-Lapture-Web-RegularItalic-subset.woff2") format("WOFF2");
+    src: url("../fonts/DEMO-JAF-Lapture-Web-Bold-full.woff2") format("WOFF2");
+    src: url("../fonts/DEMO-JAF-Lapture-Web-Bold-subset.woff2") format("WOFF2");
+    src: url("../fonts/DEMO-JAF-Lapture-Web-BoldItalic-full.woff2") format("WOFF2");
+    src: url("../fonts/DEMO-JAF-Lapture-Web-BoldItalic-subset.woff2") format("WOFF2");
+    src: url("../fonts/DEMO-JAF-LaptureDisplay-Web-Black-full.woff2") format("WOFF2");
+    src: url("../fonts/DEMO-JAF-LaptureDisplay-Web-Black-subset.woff2") format("WOFF2");
+    src: url("../fonts/JAF-LaptureDisplay-Web-Regular-full.woff2") format("WOFF2");
+}
+
+@font-face {
+    font-family: "Fyodor";
+    src: url("../fonts/fyodor.bold-condensed.ttf") format("truetype");
+}
+
+:root {
+    /* Fonts */
+    --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-secondary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+    --percentage: 0%;
+    --body-bg: #ffffff;
+    --border-color: #1e1e1e;
+    --heading-color: #1e1e1e;
+    --heading-underline-color: rgba(0, 0, 0, 0.3);
+    --text-color: #1e1e1e;
+    --text-color-alt: #bbb;
+    --nav-text-color: #1e1e1e;
+    --social-media-links-color: #1e1e1e;
+    --cta-bg: #fff;
+    --cta-color: #000;
+    --cta-bg-hover: #fff;
+    --cta-color-hover: #000;
+    --accent-color: #1e1e1e;
+    --svg-color-filter: brightness(0) saturate(100%) invert(5%) sepia(12%)
+        saturate(44%) hue-rotate(315deg) brightness(98%) contrast(86%);
+
+}
+
+:root[data-theme="dark"] {
+    /* Fonts */
+    --font-primary: -apple-system, BlinkMacSystemFont, "JAF Lapture", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-secondary: -apple-system, BlinkMacSystemFont, "JAF Lapture", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+    --body-bg: #1e1e1e;
+    --border-color: #ffffff;
+    --heading-color: #fff;
+    --heading-underline-color: rgba(255, 255, 255, 0.3);
+    --text-color: #bbb;
+    --text-color-alt: #1e1e1e;
+    --nav-text-color: #fff;
+    --social-media-links-color: #fff;
+    --cta-bg: #fff;
+    --cta-color: #000;
+    --cta-bg-hover: #000;
+    --cta-color-hover: #fff;
+    --accent-color: #fff;
+    --svg-color-filter: brightness(0) saturate(100%) invert(100%) sepia(100%)
+      saturate(0%) hue-rotate(183deg) brightness(104%) contrast(101%);
+  }

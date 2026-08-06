@@ -1,0 +1,40 @@
+<div class="post-sneak-peek fading">
+    {{{html}}}
+</div>
+<section class="section-content-cta mt-8 relative py-16 sm:py-24 lg:py-[6em]">
+    <div class="px-8 lg:px-[4em] flex flex-col gap-6 lg:gap-[0.5em]">
+        <div class="w-full flex gap-8 increase-height">
+            <div class="h-0 min-w-[11px] bg-[--accent-color] relative before:absolute before:top-0 before:left-0 before:w-full before:h-full before:blur-[--blur-lg] before:bg-[--accent-color] transition-[height] duration-1000 delay-100"></div>
+            <h1 class="section-content-cta-title text-[1.75rem] leading-9 md:text-[1.875rem] md:leading-[2.375rem] lg:text-[2.5em] lg:leading-[1.25em] text-[--heading-color] font-bold font-secondary fade-in transition-all duration-1000 delay-100">
+                {{#has visibility="paid"}}{{t "Remaining content is for paid members only."}}{{/has}}
+                {{#has visibility="members"}}{{t "Remaining content is for members only."}}{{/has}}
+                {{#has visibility="tiers"}}{{t "Remaining content is for"}} {{tiers}} {{t "members only."}}{{/has}}
+            </h1>
+        </div>
+        <div class="w-full flex flex-col md:flex-row items-center justify-between gap-6">
+            <p class="section-content-cta-description fade-in lg:max-w-70">
+                {{#if @member}}
+                    {{t "Thank you for being a member. Please upgrade your account to unlock more content."}}
+                {{else}}
+                    {{#has visibility="paid"}} {{t "Please subscribe to any paid plan to unlock this article and more content."}} {{/has}}
+                    {{#has visibility="members"}} {{t "Please become a free member to unlock this article and more content."}} {{/has}}
+                    {{#has visibility="tiers"}} {{t "Please subscribe to"}} {{tiers}} {{t "to unlock this article and more content."}} {{/has}}
+                    <br> {{t "Already have an account?"}} <button data-portal="signin" class="underline">{{t "Sign In"}}</button>
+                {{/if}}
+            </p>
+            <div class="section-content-cta-button fade-in transition-all duration-1000 delay-100 flex justify-end w-full md:w-auto">
+                {{#if @member}}
+                    <button data-portal="account/plans" type="submit" class="relative block uppercase font-medium text-center text-sm lg:text-[0.9em] lg:leading-loose leading-8 text-[--cta-color] hover:text-[--cta-color-hover] bg-[--cta-bg] hover:bg-[--cta-bg-hover] px-4 py-2 border border-[--border-color] transition-all duration-100 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[--cta-bg] before:blur-[--blur-lg] before:-z-10 w-full sm:w-auto"> {{t "Upgrade Account"}} </button>
+                {{else}}
+                    <button data-portal="signup" type="submit" class="relative block uppercase font-medium text-center text-sm lg:text-[0.9em] lg:leading-loose leading-8 text-[--cta-color] hover:text-[--cta-color-hover] bg-[--cta-bg] hover:bg-[--cta-bg-hover] px-4 py-2 border border-[--border-color] transition-all duration-100 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[--cta-bg] before:blur-[--blur-lg] before:-z-10 w-full sm:w-auto"> {{t "Sign Up"}} </button>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <div class="noise-bg"></div>
+    <div class="white-bg"></div>
+    <div class="luminous-borders-container">
+        <div class="luminous-borders-blur border-l-2 border-t-2 border-r-2 border-b-2"></div>
+        <div class="luminous-borders-solid border-l-2 border-t-2 border-r-2 border-b-2"></div>
+    </div>
+</section>

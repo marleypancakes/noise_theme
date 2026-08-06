@@ -1,0 +1,40 @@
+<a href="{{url}}" title="{{name}}" class="tag-card">
+    <div class="relative h-full px-4 sm:px-8 py-12 sm:py-16 lg:p-[4em]">
+
+        <div class="flex justify-between items-center">
+            <div class="flex flex-col items-start justify-start gap-4 lg:gap-[1em] max-w-50">
+                <div class="tag-card-name overflow-hidden slide-container">
+                    <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                        <div class="capitalize font-primary font-bold text-[--heading-color] text-2xl lg:text-[1.8em] leading-8 lg:leading-[2em]"> {{name}} </div>
+                    </div>
+                </div>
+                <div class="tag-card-post-count overflow-hidden slide-container">
+                    <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                        <p>{{plural count.posts empty=(t 'No Articles') singular=(t '1 Articles') plural=(t '% Articles')}}</p>
+                    </div>
+                </div>
+            </div>
+            {{#if feature_image}}
+            <div class="tag-card-feature-image overflow-hidden slide-container">
+                <div class="translate-y-full hover:translate-y-0 transition-all duration-1000 delay-100">
+                    <div class="h-[8rem] aspect-square bg-white rounded-full overflow-hidden border border-black">
+                        <img class="h-full w-full object-center object-cover"
+                        data-srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 500w"
+                        data-sizes="auto"
+                        data-src="{{img_url feature_image size="m"}}"
+                        src="{{img_url feature_image size="m"}}"
+                        alt="{{name}}" loading="lazy"
+                        />
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+        <p class="tag-card-description transition-all duration-1000 delay-100 fade-in mt-8 lg:mt-[2em]"> {{description}} </p>
+        <div class="luminous-borders-container">
+            <div class="luminous-borders-blur border-b-2 border-r-2"></div>
+            <div class="luminous-borders-solid border-b-2 border-r-2"></div>
+        </div>
+    </div>
+</a>

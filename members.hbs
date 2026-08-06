@@ -1,0 +1,38 @@
+{{!< default}}
+{{!-- Title for 'Members Only Articles' --}}
+{{#page}}
+    {{> common/page-hero}}
+    <section class="section-members-page js-content-section relative px-4 sm:px-8 lg:px-[4em] pb-16 sm:pb-36 lg:pb-[9em] pt-20 lg:pt-[6.5em]">
+        <div class="js-content-wrap lg:max-w-[70em] mx-auto transition-all duration-1000 delay-100 fade-in">
+            {{content}}
+        </div>
+        <div class="luminous-borders-container">
+            <div class="luminous-borders-blur border-b-2"></div>
+            <div class="luminous-borders-solid border-b-2"></div>
+        </div>
+    </section>
+{{/page}}
+
+{{^if member}}
+{{!-- Members CTA section --}}
+{{> common/cta
+    title=(t "CTA_MEMBERS_TITLE")
+    description=(t "CTA_MEMBERS_DESCRIPTION")
+    button=(t "CTA_MEMBERS_BUTTON_LABEL")
+    button_link=(t "CTA_MEMBERS_LINK")
+}}
+
+{{/if}}
+
+{{!-- Blog card loop --}}
+{{> loop}}
+{{!-- Pagination for the above loop --}}
+{{pagination}}
+
+{{!-- Homepage CTA section --}}
+{{> common/cta
+    title=(t "CTA_TITLE")
+    description=(t "CTA_DESCRIPTION")
+    button=(t "CTA_BUTTON_LABEL")
+    button_link=(t "CTA_LINK")
+}}
