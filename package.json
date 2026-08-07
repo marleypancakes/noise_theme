@@ -77,7 +77,7 @@
                 "width": 2000
             }
         },
-        "custom":{
+        "custom": {
             "title": {
                 "type": "text",
                 "default": "Noise - a silent chaos.",
@@ -129,13 +129,13 @@
             "default_color_scheme": {
                 "type": "select",
                 "options": [
-                  "System",
-                  "Light",
-                  "Dark"
+                    "System",
+                    "Light",
+                    "Dark"
                 ],
                 "default": "System",
                 "description": "Color scheme for the website."
-              },
+            },
             "logo_for_dark_mode": {
                 "type": "image",
                 "description": "Logo for dark mode. Ensure the dimensions are same as that of your default logo."
@@ -271,5 +271,8 @@
             }
         }
     },
-    "type": "module"
+    "type": "module",
+    "dependencies": {
+        "tiny-slider": "^2.9.4"
+    }
 }

@@ -755,12 +755,12 @@ svg:not(.icon-tabler) {
 }
 
 .mobile-nav[data-open="false"] {
-    top: -100%;
+    right: -100%;
     transition-delay: 1s;
 }
 
 .mobile-nav[data-open="true"] {
-    top: 0;
+    right: 0;
 }
 
 .mobile-nav[data-open="false"] > .mobile-cart-button,
@@ -770,13 +770,13 @@ svg:not(.icon-tabler) {
 }
 
 .mobile-nav[data-open="true"] .mobile-nav-links {
-    --tw-translate-y: 0px;
+    --tw-translate-x: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     opacity: 1;
 }
 
 .mobile-nav[data-open="false"] .mobile-nav-links {
-    --tw-translate-y: -1rem;
+    --tw-translate-x: 1rem;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     opacity: 0;
     transition-delay: 0s;

@@ -1,4 +1,4 @@
-<div class="mobile-nav z-100000 fixed left-0 w-screen bg-[--body-bg] transition-all duration-1000" data-open="false">
+<div class="mobile-nav z-100000 fixed w-screen bg-[--body-bg] transition-all duration-1000" data-open="false">
     <div class="w-full flex justify-center items-center">
         <button class="mobile-nav-button px-[10%] py-8 transition-opacity duration-1000 delay-1000 close-mobile-nav-button" aria-label="Mobile Menu Button">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -22,6 +22,6 @@
             {{#if @site.facebook}}<a href="{{facebook_url}}" class="text-[--nav-text-color] uppercase text-[3.2vw] sm:text-sm leading-8 font-medium">{{t "Facebook"}}</a>{{/if}}
             {{#if @site.twitter}}<a href="{{twitter_url}}" class="text-[--nav-text-color] uppercase text-[3.2vw] sm:text-sm leading-8 font-medium">{{t "X (Twitter)"}}</a>{{/if}}
         </div>
-        <div class="absolute bottom-0 left-0 h-4 bg-[--accent-color] before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-[--accent-color] before:blur-[--blur-lg] w-full"></div>
+        <div class="absolute bottom-0 left-0 h-4 bg-[--accent-color] before:absolute before:top-0 before:right-0 before:h-full before:w-full before:bg-[--accent-color] before:blur-[--blur-lg] w-full"></div>
     </div>
 </div>

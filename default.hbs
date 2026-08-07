@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{{asset "built/index.css"}}">
     {{{block "styles"}}}
     {{> handle-theme}}
+    {{!-- Tiny-Slider --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <title>{{meta_title}}</title>
     {{!-- Outputs important meta data and settings, should always be in <head> --}}
     {{ghost_head}}
@@ -52,5 +54,22 @@
     {{{block "scripts"}}}
     {{!-- Outputs important scripts - should always be included before closing body tag --}}
     {{ghost_foot}}
+    {{!-- Tiny-Slider for featured posts --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+    <script>
+      if (document.getElementById('featuredSlider')) {
+        tns({
+          container: '#featuredSlider',
+          items: 1,
+          slideBy: 'page',
+          gutter: 600,
+          edgePadding: 200,
+          autoplay: false,
+          autoplayButtonOutput: false,
+          controls: true,
+          nav: true
+        });
+      }
+    </script>
   </body>
 </html>

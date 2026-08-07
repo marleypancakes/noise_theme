@@ -5,18 +5,18 @@ function handleHeader() {
     let oldScrollY = window.screenY;
     document.body.style.paddingTop = `${headerHeight}px`;
 
-    window.addEventListener("scroll", (e) => {
-        if (oldScrollY < window.scrollY) {
-            if (window.scrollY >= headerHeight) {
-                header.style.top = "-100%";
-            } else {
-                header.style.top = "0px";
-            }
-        } else {
-            header.style.top = "0px";
-        }
-        oldScrollY = window.scrollY;
-    });
+    // window.addEventListener("scroll", (e) => {
+    //     if (oldScrollY < window.scrollY) {
+    //         if (window.scrollY >= headerHeight) {
+    //             header.style.top = "-100%";
+    //         } else {
+    //             header.style.top = "0px";
+    //         }
+    //     } else {
+    //         header.style.top = "0px";
+    //     }
+    //     oldScrollY = window.scrollY;
+    // });
 
     window.addEventListener("resize", () => {
         document.body.style.paddingTop = `${headerHeight}px`;
