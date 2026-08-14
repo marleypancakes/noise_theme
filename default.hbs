@@ -21,6 +21,7 @@
     {{> handle-theme}}
     {{!-- Tiny-Slider --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <link rel="stylesheet" href="{{asset "css/components/slider.css"}}">
     <title>{{meta_title}}</title>
     {{!-- Outputs important meta data and settings, should always be in <head> --}}
     {{ghost_head}}
@@ -63,11 +64,28 @@
           items: 1,
           slideBy: 'page',
           gutter: 600,
-          edgePadding: 200,
+          center: true,
+          autowidth: false,
+          loop: false,
           autoplay: false,
           autoplayButtonOutput: false,
           controls: true,
-          nav: true
+          nav: true,
+          responsive: {
+            640: {
+              gutter: 20,
+              edgePadding: 20
+            },
+            700: {
+              gutter: 30,
+              edgePadding: 30
+            },
+            900: {
+              gutter: 40,
+              edgePadding: 40
+            }
+
+          }
         });
       }
     </script>

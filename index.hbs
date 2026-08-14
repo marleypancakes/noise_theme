@@ -12,13 +12,13 @@ Ensure you are keeping the file name same and should match 'brand (x).png' forma
     {{!-- Title for 'Featured Articles' --}}
     {{> common/title title="Featured Articles" h1=false}}
     {{#get "posts" limit="5" include="tags,authors" filter="featured:true"}}
-        <div class="featured-slider w-50" id="featuredSlider">
-            {{#foreach posts}}
-            <div class="slide">
-                {{> post-card isFeaturedSection="true"}}
-            </div>
-            {{/foreach}}
+    <div class="featured-slider w-full" id="featuredSlider">
+        {{#foreach posts}}
+        <div class="slide">
+            {{> post-card isFeaturedSection="true"}}
         </div>
+        {{/foreach}}
+    </div>
     {{/get}}
     {{!-- This partial will show the Welcome message with a title. Both the title and description is configurable from the Ghost settings --}}
     {{> home/welcome}}

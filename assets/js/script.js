@@ -3,7 +3,7 @@ function handleHeader() {
     const header = document.querySelector("header");
     let headerHeight = header.clientHeight;
     let oldScrollY = window.screenY;
-    document.body.style.paddingTop = `${headerHeight}px`;
+    // document.body.style.paddingTop = `${headerHeight}px`;
 
     // window.addEventListener("scroll", (e) => {
     //     if (oldScrollY < window.scrollY) {

@@ -1,0 +1,26 @@
+.featured-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 75% !important;
+}
+
+.featured-slider .slide {
+  transition: transform 0.5s ease;
+}
+
+.featured-slider .slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+#featuredSlider-iw {
+    margin: 0px 0px 0px 0px !important;
+}
+
+#featuredSlider>.tns-item {
+    padding-right: 0px !important;
+}
+}
