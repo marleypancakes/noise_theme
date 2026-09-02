@@ -1,5 +1,5 @@
-# Noise Ghost Theme by Theme Up Studio
-Noise is an elegant Ghost theme that breathes new life into your blog. Orchid's sophisticated design sets it apart from other Ghost CMS themes, offering a truly unique and visually stunning platform for your content.
+# Custom Ghost theme for Notes on the Crises
+Theme developed and customized by Marley Wallace. Based on Noise theme by Theme Up Studios.
 
 # Requirements
 Ghost 5.x or higher
@@ -22,18 +22,6 @@ If you are using [Ghost Pro](https://openurl.dev/ghost) for your managed hosting
 - `featured.hbs` - Used to show all Featured posts
 - `members.hbs` - Used to show all Members-only posts
 - `error.hbs` - Used to show the error page. This single template will be used for all error codes like 4XX, 5XX, etc. Error code and Error message will be dynamically displayed on the page. A link to the homepage will also be displayed.
-
-# Buy
-[https://themeup.lemonsqueezy.com/checkout/buy/d2ed269e-002a-4f75-b278-df72263df108](https://themeup.lemonsqueezy.com/checkout/buy/d2ed269e-002a-4f75-b278-df72263df108)
-
-# Demo
-[https://noise.themeupstudio.com/](https://noise.themeupstudio.com/)
-
-# Documentation
-[https://www.themeupstudio.com/docs/noise-docs/](https://www.themeupstudio.com/docs/noise-docs/)
-
-# Help
-[https://www.themeupstudio.com/contact/](https://www.themeupstudio.com/contact/)
 
 # Changelog
 - v1.0.0 - Initial release
