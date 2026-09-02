@@ -18,9 +18,9 @@ function handleHeader() {
     //     oldScrollY = window.scrollY;
     // });
 
-    window.addEventListener("resize", () => {
-        document.body.style.paddingTop = `${headerHeight}px`;
-    });
+    // window.addEventListener("resize", () => {
+    //     document.body.style.paddingTop = `${headerHeight}px`;
+    // });
 }
 
 //dropdown and cart menu

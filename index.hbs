@@ -1,7 +1,6 @@
 {{!< default}}
 {{!-- First section on the homepage. Section includes featured image, Site title, Site description along with a button.
 Title, description, button label and button URL can be configured from Ghost settings --}}
-{{> home/hero}}
 {{!-- This partial will show a horizontally moving images of all brand logos.
 To change/add any brand logo, please create light and dark version of the brand logo and add them in /assets/images/brand-logos.
 Ensure you are keeping the file name same and should match 'brand (x).png' format, where 'x' is any number from 1 to 21 --}}
@@ -9,8 +8,8 @@ Ensure you are keeping the file name same and should match 'brand (x).png' forma
     {{> home/brand-logos}}
 {{/if}}
 {{#if posts}}
-    {{!-- Title for 'Featured Articles' --}}
-    {{> common/title title="Featured Articles" h1=false}}
+    {{!-- Title for 'Featured Articles' (with carousel) --}}
+    {{!-- {{> common/title title="Featured" h1=false}}
     {{#get "posts" limit="5" include="tags,authors" filter="featured:true"}}
     <div class="featured-slider w-full" id="featuredSlider">
         {{#foreach posts}}
@@ -19,9 +18,22 @@ Ensure you are keeping the file name same and should match 'brand (x).png' forma
         </div>
         {{/foreach}}
     </div>
-    {{/get}}
-    {{!-- This partial will show the Welcome message with a title. Both the title and description is configurable from the Ghost settings --}}
-    {{> home/welcome}}
+    {{/get}} --}}
+    {{!-- Title for 'Featured Articles' --}}
+    {{!-- {{> common/title title="Featured" h1=false}} --}}
+    <div class="relative w-full flex flex-row items-center justify-center py-10">
+        {{#get "posts" limit="1" include="tags,authors" filter="featured:true"}}
+            <div class="w-2/3">
+                {{#foreach posts}}
+                    {{> post-card isFeaturedSection="true"}}
+                {{/foreach}}
+            </div>
+        {{/get}}
+        <div class="luminous-borders-container">
+            <div class="luminous-borders-blur border-b-2"></div>
+            <div class="luminous-borders-solid border-b-2"></div>
+        </div>
+    </div>
     {{!-- Title for 'Articles' --}}
     {{> common/title title="Articles" h1=false}}
     {{!-- List of top tags --}}
@@ -56,9 +68,9 @@ Ensure you are keeping the file name same and should match 'brand (x).png' forma
     {{/if}}
 {{/if}}
 {{!-- List of top 4 authors --}}
-{{> author/authors}}
+{{!-- {{> author/authors}}
 {{!-- List of top 4 tags --}}
-{{> tag/tags}}
+{{!-- tag/tags}} --}}
 {{!-- Homepage CTA section --}}
 {{> common/cta
     title=(t "CTA_TITLE")

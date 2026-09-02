@@ -3,8 +3,8 @@ This is a development CSS file that is compiled to a minified
 production stylesheet in assets/built/screen.css using: npm run build
 */
 
-@import "vars.css";
-@import "cards.css";
+@import "./vars.css";
+@import "./cards.css";
 
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */

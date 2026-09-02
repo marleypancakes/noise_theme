@@ -1,147 +1,117 @@
-<div class="relative flex flex-col items-start justify-start {{#if isFeaturedSection}}md:h-auto md:flex-row xl:flex-row{{else}}md:h-[50vh] md:flex-col xl:flex-col{{/if}} {{^if isFeaturedSection}}js-post-card{{/if}}">
+<div class="relative flex flex-col md:flex-row xl:flex-col items-start justify-start {{^if isFeaturedSection}}js-post-card{{/if}}">
     {{#if feature_image}}
-    <a href="{{url}}"
-        class="flex flex-1 relative justify-center items-center h-[75vw] sm:h-[60vw] md:h-full lg:h-full  {{#if isFeaturedSection}} w-1/2 xl:w-1/2 aspect-[16/9]{{else}}h-[50vh] w-full xl:w-full{{/if}}">
-        <picture class="min-h-full min-w-full">
-            {{!-- avif will not work with animations. If you plan to use animated images, then remove the avif image
-            source. --}}
-            <source srcset="{{img_url feature_image size=" xxs" format="avif" }} 50w, {{img_url feature_image size="xs"
-                format="avif" }} 100w, {{img_url feature_image size="s" format="avif" }} 300w, {{img_url feature_image
-                size="m" format="avif" }} 500w, {{img_url feature_image size="l" format="avif" }} 700w, {{img_url
-                feature_image size="xl" format="avif" }} 1000w, {{img_url feature_image size="xxl" format="avif" }}
-                2000w" sizes="((max-width: 100px)) 100px,
+        <a href="{{url}}" class="flex flex-1 relative justify-center items-center h-[75vw] sm:h-[60vw] md:h-full lg:h-full w-full md:w-1/3 xl:w-full">
+            <picture class="min-h-full min-w-full">
+                {{!-- avif will not work with animations. If you plan to use animated images, then remove the avif image source. --}}
+                <source srcset="{{img_url feature_image size="xxs" format="avif"}} 50w,
+                        {{img_url feature_image size="xs" format="avif"}} 100w,
+                        {{img_url feature_image size="s" format="avif"}} 300w,
+                        {{img_url feature_image size="m" format="avif"}} 500w,
+                        {{img_url feature_image size="l" format="avif"}} 700w,
+                        {{img_url feature_image size="xl" format="avif"}} 1000w,
+                        {{img_url feature_image size="xxl" format="avif"}} 2000w" sizes="((max-width: 100px)) 100px,
                       ((min-width: 100px) and (max-width: 500px)) 500px,
                       ((min-width: 500px) and (max-width: 1000px)) 500px,
                       (min-width: 1000px) 500px" type="image/avif">
-            <source srcset="{{img_url feature_image size=" xxs" format="webp" }} 50w, {{img_url feature_image size="xs"
-                format="webp" }} 100w, {{img_url feature_image size="s" format="webp" }} 300w, {{img_url feature_image
-                size="m" format="webp" }} 500w, {{img_url feature_image size="l" format="webp" }} 700w, {{img_url
-                feature_image size="xl" format="webp" }} 1000w, {{img_url feature_image size="xxl" format="webp" }}
-                2000w" sizes="((max-width: 100px)) 100px,
+                <source srcset="{{img_url feature_image size="xxs" format="webp"}} 50w,
+                        {{img_url feature_image size="xs" format="webp"}} 100w,
+                        {{img_url feature_image size="s" format="webp"}} 300w,
+                        {{img_url feature_image size="m" format="webp"}} 500w,
+                        {{img_url feature_image size="l" format="webp"}} 700w,
+                        {{img_url feature_image size="xl" format="webp"}} 1000w,
+                        {{img_url feature_image size="xxl" format="webp"}} 2000w" sizes="((max-width: 100px)) 100px,
                       ((min-width: 100px) and (max-width: 500px)) 500px,
                       ((min-width: 500px) and (max-width: 1000px)) 500px,
                       (min-width: 1000px) 500px" type="image/webp">
-            <img srcset="{{img_url feature_image size=" xxs"}} 50w, {{img_url feature_image size="xs" }} 100w, {{img_url
-                feature_image size="s" }} 300w, {{img_url feature_image size="m" }} 500w, {{img_url feature_image
-                size="l" }} 700w, {{img_url feature_image size="xl" }} 1000w, {{img_url feature_image size="xxl" }}
-                2000w" src="{{img_url feature_image size=" l"}}" sizes="((max-width: 100px)) 100px,
+                <img srcset="{{img_url feature_image size="xxs"}} 50w,
+                        {{img_url feature_image size="xs"}} 100w,
+                        {{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 500w,
+                        {{img_url feature_image size="l"}} 700w,
+                        {{img_url feature_image size="xl"}} 1000w,
+                        {{img_url feature_image size="xxl"}} 2000w" src="{{img_url feature_image size="l"}}" sizes="((max-width: 100px)) 100px,
                       ((min-width: 100px) and (max-width: 500px)) 500px,
                       ((min-width: 500px) and (max-width: 1000px)) 500px,
-                      (min-width: 1000px) 500px" loading="{{#if isFeaturedSection}}eager{{else}}lazy{{/if}}"
-                width="400" height="264" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                class="blog-feature-image h-80 relative {{#if isFeaturedSection}}h-full w-full{{else}}h-full w-auto max-w-none{{/if}} w-full border-2 border-l-0 border-t-0 border-[--border-color] object-cover object-center blog-thumbnail transition-all duration-200 sm:grayscale hover:grayscale-0">
-        </picture>
-        <div
-            class="absolute right-0.5 bottom-0.5 text-base lg:text-[1em] leading-loose text-[--heading-color] py-0.5 px-3 bg-[--body-bg] m-[0.3] transition-all duration-200">
-            {{reading_time minute="1 minute to read" minutes="% minutes to read"}} </div>
-        <div class="luminous-borders-container">
-            <div class="luminous-borders-blur border-2 border-l-0 border-t-0"></div>
-            <div class="luminous-borders-solid border-2 border-l-0 border-t-0"></div>
-        </div>
-    </a>
-    {{else}}
-    <a href="{{url}}"
-        class="flex flex-1 relative justify-center items-center h-[75vw] sm:h-[60vw] md:h-full lg:h-full w-1/2 {{#if isFeaturedSection}}md:w-1/2 aspect-[16/9]{{else}}h-[50vh] {{/if}}">
-        <div class="min-h-full min-w-full">
-            <div
-                class="h-80 relative w-full border-2 border-l-0 border-t-0 border-[--border-color] object-cover object-center blog-thumbnail transition-all duration-200 sm:grayscale hover:grayscale-0">
-                <div
-                    class="absolute right-0.5 bottom-0.5 text-base lg:text-[1em] leading-loose text-[--heading-color] py-0.5 px-3 bg-[--body-bg] m-[0.3] transition-all duration-200">
-                    {{reading_time minute="1 minute to read" minutes="% minutes to read"}} </div>
-                <div class="noise-bg"></div>
-                <div class="white-bg"></div>
-            </div>
-        </div>
-        <div class="luminous-borders-container">
-            <div class="luminous-borders-blur border-2 border-l-0 border-t-0"></div>
-            <div class="luminous-borders-solid border-2 border-l-0 border-t-0"></div>
-        </div>
-    </a>
-    {{/if}}
-    <div
-        class="{{#if isFeaturedSection}}md:w-1/2 h-auto md:h-full{{else}} h-[50vh] w-full xl:w-full{{/if}}  lg:h-full px-4 sm:px-8 lg:px-[4em] pt-4 sm:pt-12 sm:pb-8 lg:py-[2em] xl:py-[3em] flex flex-col items-start justify-start lg:justify-between gap-4 md:gap-0 xl:gap-[1em]">
-        <div class="w-full">
-            {{#if tags}}
-            <div class="overflow-hidden mb-4 slide-container">
-                <div class="hover:translate-y-0 transition-all duration-1000 delay-100">
-                    <div
-                        class="flex flex-wrap gap-x-8 uppercase text-[--text-color] text-xs lg:text-[0.9em] leading-loose lg:leading-[2em]">
-                        {{#primary_tag}}
-                        <a href="{{url}}" class="font-secondary flex gap-x-1">{{name}}</a>
-                        {{/primary_tag}}
-                    </div>
-                </div>
+                      (min-width: 1000px) 500px" loading="lazy" width="400" height="264" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" class="blog-feature-image h-80 relative w-full {{#if isFeaturedSection}}{{else}}border-2 border-l-0 border-t-0 border-[--border-color]{{/if}} object-cover object-center blog-thumbnail transition-all duration-200 sm:grayscale hover:grayscale-0">
+            </picture>
+            <div class="absolute right-0.5 bottom-0.5 text-base lg:text-[1em] leading-loose text-[--heading-color] py-0.5 px-3 bg-[--body-bg] m-[0.3] transition-all duration-200"> {{reading_time minute="1 minute to read" minutes="% minutes to read"}} </div>
+           {{#if isFeaturedSection}}{{else}}
+            <div class="luminous-borders-container">
+                <div class="luminous-borders-blur border-2 border-l-0 border-t-0"></div>
+                <div class="luminous-borders-solid border-2 border-l-0 border-t-0"></div>
             </div>
             {{/if}}
-            <a href="{{url}}" class="transition-all duration-1000 delay-100">
-                <div class="text-[--heading-color] font-primary text-2xl lg:text-[1.8em] leading-normal"> {{title}}
+        </a>
+    {{else}}
+        <a href="{{url}}" class="flex flex-1 relative justify-center items-center h-[75vw] sm:h-[60vw] md:h-full lg:h-full w-full md:w-1/3 xl:w-full">
+            <div class="min-h-full min-w-full">
+                <div class="h-80 relative w-full{{#if isFeaturedSection}}{{else}} border-2 border-l-0 border-t-0 border-[--border-color] {{/if}} object-cover object-center blog-thumbnail transition-all duration-200 sm:grayscale hover:grayscale-0">
+                    <div class="absolute right-0.5 bottom-0.5 text-base lg:text-[1em] leading-loose text-[--heading-color] py-0.5 px-3 bg-[--body-bg] m-[0.3] transition-all duration-200"> {{reading_time minute="1 minute to read" minutes="% minutes to read"}} </div>
+                    <div class="noise-bg"></div>
+                    <div class="white-bg"></div>
                 </div>
-                {{!-- <p class="mt-4 md:mt-6 lg:mt-[1.5em] font-secondary transition-all duration-1000 delay-100"> {{excerpt}}
-                </p> --}}
+            </div>
+            {{#if isFeaturedSection}}{{else}}
+            <div class="luminous-borders-container">
+                <div class="luminous-borders-blur border-2 border-l-0 border-t-0"></div>
+                <div class="luminous-borders-solid border-2 border-l-0 border-t-0"></div>
+            </div>
+            {{/if}}
+        </a>
+    {{/if}}
+    <div class="w-full md:w-2/3 xl:w-full lg:h-full px-4 sm:px-8 lg:px-[4em] {{#if isFeaturedSection}}py-2{{else}}pt-4 sm:pt-12 sm:pb-8 lg:py-[2em] xl:py-[3em] gap-4 md:gap-0 xl:gap-[1em]{{/if}} flex flex-col items-start justify-start lg:justify-between">
+        <div class="w-full">
+            {{#if tags}}
+                <div class="overflow-hidden {{#if isFeaturedSection}}{{else}}mb-4{{/if}} slide-container">
+                    <div class="hover:translate-y-0 transition-all duration-1000 delay-100">
+                        <div class="flex flex-wrap gap-x-8 uppercase text-[--text-color] text-xs lg:text-[0.9em] leading-loose lg:leading-[2em]">
+                            {{#primary_tag}}
+                                <a href="{{url}}" class="font-secondary flex gap-x-1">{{name}}</a>
+                            {{/primary_tag}}
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+            <a href="{{url}}" class="transition-all duration-1000 delay-100">
+                <div class="text-[--heading-color] font-primary text-2xl lg:text-[1.8em] leading-normal"> {{title}} </div>
             </a>
         </div>
-        <div class="overflow-hidden slide-container w-full flex justify-end mt-4 lg:mt-[1em] mb-4">
+        <div class="overflow-hidden slide-container w-full flex justify-end {{#if isFeaturedSection}}my-2{{else}}mt-4 lg:mt-[1em] mb-4{{/if}}">
             <div class="mr-auto">
                 {{authors separator="&nbsp;&bull;&nbsp;"}}
             </div>
             <div class="lg:m-0">
                 <div class="flex items-center gap-4 justify-center">
                     {{^if access}}
-                    {{#has visibility="members"}}
-                    <div class="flex items-center justify-end">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-user">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                        </svg>
-                    </div>
-                    {{/has}}
-                    {{#has visibility="paid"}}
-                    <div class="flex items-center justify-end">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-user-dollar">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                            <path d="M6 21v-2a4 4 0 0 1 4 -4h3" />
-                            <path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5" />
-                            <path d="M19 21v1m0 -8v1" />
-                        </svg>
-                    </div>
-                    {{/has}}
-                    {{#has visibility="tiers"}}
-                    <div class="flex items-center justify-end">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-user-dollar">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                            <path d="M6 21v-2a4 4 0 0 1 4 -4h3" />
-                            <path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5" />
-                            <path d="M19 21v1m0 -8v1" />
-                        </svg>
-                    </div>
-                    {{/has}}
+                        {{#has visibility="members"}}
+                            <div class="flex items-center justify-end">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+                            </div>
+                        {{/has}}
+                        {{#has visibility="paid"}}
+                            <div class="flex items-center justify-end">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user-dollar"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h3" /><path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5" /><path d="M19 21v1m0 -8v1" /></svg>
+                            </div>
+                        {{/has}}
+                        {{#has visibility="tiers"}}
+                            <div class="flex items-center justify-end">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user-dollar"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h3" /><path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5" /><path d="M19 21v1m0 -8v1" /></svg>
+                            </div>
+                        {{/has}}
                     {{/if}}
                     {{#if featured}}
-                    <div class="flex items-center justify-end">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-carambola">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M17.286 21.09q -1.69 .001 -5.288 -2.615q -3.596 2.617 -5.288 2.616q -2.726 0 -.495 -6.8q -9.389 -6.775 2.135 -6.775h.076q 1.785 -5.516 3.574 -5.516q 1.785 0 3.574 5.516h.076q 11.525 0 2.133 6.774q 2.23 6.802 -.497 6.8" />
-                        </svg>
-                    </div>
+                        <div class="flex items-center justify-end">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-carambola"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17.286 21.09q -1.69 .001 -5.288 -2.615q -3.596 2.617 -5.288 2.616q -2.726 0 -.495 -6.8q -9.389 -6.775 2.135 -6.775h.076q 1.785 -5.516 3.574 -5.516q 1.785 0 3.574 5.516h.076q 11.525 0 2.133 6.774q 2.23 6.802 -.497 6.8" /></svg>
+                        </div>
                     {{/if}}
                 </div>
             </div>
         </div>
     </div>
+    {{#if isFeaturedSection}}{{else}}
     <div class="luminous-borders-container">
         <div class="luminous-borders-blur border-b-2 border-r-2"></div>
         <div class="luminous-borders-solid border-b-2 border-r-2"></div>
     </div>
+    {{/if}}
 </div>

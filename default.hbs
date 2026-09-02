@@ -17,6 +17,8 @@
     </style>
     {{!-- Compiled CSS --}}
     <link rel="stylesheet" href="{{asset "built/index.css"}}">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     {{{block "styles"}}}
     {{> handle-theme}}
     {{!-- Tiny-Slider --}}
@@ -83,6 +85,10 @@
             900: {
               gutter: 40,
               edgePadding: 40
+            },
+            1900: {
+              gutter: 300,
+              edgePadding: 300
             }
 
           }
